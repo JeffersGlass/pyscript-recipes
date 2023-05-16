@@ -1,0 +1,26 @@
+{
+  "name": "pyscript-recipes",
+  "version": "1.0.0",
+  "description": "Source for pyscript.recipes",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffersGlass/pyscript-recipes.git"
+  },
+  "keywords": [
+    "pyscript",
+    "python"
+  ],
+  "author": "Jeff Glass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffersGlass/pyscript-recipes/issues"
+  },
+  "homepage": "https://github.com/JeffersGlass/pyscript-recipes#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha3"
+  }
+}
