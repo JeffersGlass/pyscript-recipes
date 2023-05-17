@@ -1,7 +1,7 @@
 <footer class="footer fixed-bottom bg-dark">
 
     <div class="row footer-text">
-      <div class="col-12 col-md text-center text-md-left nav-link text-white">© My Organisation - 2020 All rights reserved.</div>
+      <div class="col-12 col-md text-center text-md-left nav-link text-white">© <a href="https://jeff.glass" style="color:white">Jeff Glass</a> - 2023 All rights reserved.</div>
     </div>
 
   <!-- JavaScript and dependencies -->
@@ -9,7 +9,7 @@
   {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
   {{ $bootstrapjs := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
   <script src="{{$bootstrapjs.RelPermalink}}" defer></script>
-
+  "arn:aws:s3:::pyscript-recipes"
   {{ $sidebarjs := resources.Get "js/sidebars.js" }}
   <script src="{{$sidebarjs.RelPermalink}}" defer></script>
 
