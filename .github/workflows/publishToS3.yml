@@ -25,11 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Install Snap
-        run: sudo snap install hugo
-      - name: Install Go
-        run: sudo apt install golang
-      - name: Build Hugo Site
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.111.3"
+      - name: Build
         run: hugo
       - name: S3 Sync
         uses: JeffersGlass/s3-sync-action@master
