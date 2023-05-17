@@ -1,10 +1,13 @@
 baseURL = 'https://pyscript.recipes'
 languageCode = 'en-us'
 title = 'PyScript and Pyodide Recipes'
-theme = 'bootstrap-theme'
 relativeURLS = true
 
 [module]
 [[module.mounts]]
     source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     target = "assets/js/bootstrap.bundle.min.js"
+[[module.mounts]]
+    source = "assets"
+    target = "assets"
+
