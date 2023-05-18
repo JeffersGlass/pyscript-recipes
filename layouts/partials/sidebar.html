@@ -18,27 +18,27 @@
       </li>
 
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse" aria-expanded="false">
           APIs
         </button>
-        <div class="collapse show" id="api-collapse">
+        <div class="collapse" id="api-collapse">
           <button class="btn btn-toggle-2 align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pyscript-api-collapse" aria-expanded="true">
             PyScript APIs
           </button>
           <div class="collapse show" id="pyscript-api-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              {{ range where .Site.Pages "Params.flavor" "pyscriptapi"}}
+              {{ range where .Site.RegularPages "Section" "pyscriptApi" }}
                 <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
               {{ end }}
             </ul>
           </div>
 
-          <button class="btn btn-toggle-2 align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pyscript-api-collapse" aria-expanded="true">
+          <button class="btn btn-toggle-2 align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pyodide-api-collapse" aria-expanded="true">
             Pyodide APIs
           </button>
-          <div class="collapse show" id="pyscript-api-collapse">
+          <div class="collapse show" id="pyodide-api-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              {{ range where .Site.Pages "Params.flavor" "pyodideapi"}}
+              {{ range where .Site.RegularPages "Section" "pyodideApi" }}
                 <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
               {{ end }}
             </ul>
@@ -47,8 +47,8 @@
       </li>
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-collapse" aria-expanded="true">
-          Files
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-collapse" aria-expanded="false">
+          Something Else?
         </button>
         <div class="collapse show" id="other-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
