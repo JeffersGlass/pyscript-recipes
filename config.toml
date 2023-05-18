@@ -3,6 +3,19 @@ languageCode = 'en-us'
 title = 'PyScript and Pyodide Recipes'
 relativeURLS = true
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    guessSyntax = true
+    hl_inline = false
+    lineAnchors = ''
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'manni'
+    tabWidth = 4
+
 [module]
 [[module.mounts]]
     source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

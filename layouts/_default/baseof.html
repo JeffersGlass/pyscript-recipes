@@ -2,14 +2,12 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
-        <div class="container-fluid vh-100">
-            <div class="row h-100">
+        <div class="container-fluid">
+            <div class="row">
                 <div class="sticky-top col-sm-auto">{{- partial "sidebar.html" . -}}</div>
-                <div class="col-sm h-100">
+                <div class="col-sm">
                     {{- partial "header.html" . -}}
-                    <div id="content" class="h-100">
                     {{- block "main" . }}{{- end }}
-                    </div>
                     {{- partial "footer.html" . -}}
                 </div>
             </div>
