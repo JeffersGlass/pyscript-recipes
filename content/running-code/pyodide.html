@@ -1,0 +1,46 @@
+---
+---
+<p>Once you have the <a href="installtion">Pyodide script included on your page,</a> you can use the global <a href="https://pyodide.org/en/stable/usage/api/js-api.html#globalThis.loadPyodide">loadPyodide()</a> function in JavaScript to load the Pyodide runtime. Once loaded, the runtime can be used to execute Python code. Note that <code>loadPyodide</code> is an async function, and so must be awaited within another async function in order to retrieve a reference to the runtime once it loads.</p>
+<p>Once loaded, call the <code>runPython()</code> method of the resulting runtime to execute Python code:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight js "linenos=True">}}
+    async function main() {
+        let pyodide = await loadPyodide();
+        // Pyodide is now ready to use...
+        console.log(pyodide.runPython(`
+            import sys
+            sys.version
+        `));
+    };
+    main();
+    {{< /highlight >}}
+</div>
+<p>A complete example of an HTML page with PyScript (including some additional recommended HTML bits) might look like:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello, world!</title>
+
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+    </head>
+    <body>
+       <script>
+            async function main() {
+                let pyodide = await loadPyodide();
+                // Pyodide is now ready to use...
+                console.log(pyodide.runPython(`
+                    import sys
+                    sys.version
+                `));
+            };
+            main();
+       </script>
+    </body>
+    </html>
+    {{< /highlight >}}
+</div>

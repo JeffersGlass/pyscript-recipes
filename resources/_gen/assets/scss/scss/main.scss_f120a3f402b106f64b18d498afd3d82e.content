@@ -9264,13 +9264,21 @@ textarea.form-control-lg {
   padding: 0.5rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   margin-top: 1.5rem;
   background-color: #BFDBFE;
   font-style: italic;
   border-left-style: solid;
   border-left-width: 4px;
   border-color: #1E40AF; }
+
+.code-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+.btn-toggle-2 {
+  font-size: small;
+  margin-left: 1rem; }
 
 body {
   min-height: 100vh;
@@ -9308,7 +9316,7 @@ main {
 .nav-flush .nav-link {
   border-radius: 0; }
 
-.btn-toggle {
+.btn-toggle, .btn-toggle-2 {
   display: inline-flex;
   align-items: center;
   padding: .25rem .5rem;
@@ -9317,22 +9325,23 @@ main {
   background-color: transparent;
   border: 0; }
 
-.btn-toggle:hover,
-.btn-toggle:focus {
+.btn-toggle:hover, .btn-toggle-2:hover,
+.btn-toggle:focus,
+.btn-toggle-2:focus {
   color: rgba(0, 0, 0, 0.85);
   background-color: #d2f4ea; }
 
-.btn-toggle::before {
+.btn-toggle::before, .btn-toggle-2::before {
   width: 1.25em;
   line-height: 0;
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
   transition: transform .35s ease;
   transform-origin: .5em 50%; }
 
-.btn-toggle[aria-expanded="true"] {
+.btn-toggle[aria-expanded="true"], [aria-expanded="true"].btn-toggle-2 {
   color: rgba(0, 0, 0, 0.85); }
 
-.btn-toggle[aria-expanded="true"]::before {
+.btn-toggle[aria-expanded="true"]::before, [aria-expanded="true"].btn-toggle-2::before {
   transform: rotate(90deg); }
 
 .btn-toggle-nav a {

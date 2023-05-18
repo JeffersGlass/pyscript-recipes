@@ -9,7 +9,7 @@
     padding: 0.5rem; 
     margin-left: 1.5rem;
     margin-right: 1.5rem; 
-    margin-bottom: 1.5rem; 
+    margin-bottom: 2rem; 
     margin-top: 1.5rem;
     background-color: #BFDBFE; 
     font-style: italic; 
@@ -17,5 +17,15 @@
     border-left-width: 4px; 
     border-color: #1E40AF; 
     
-}   
-    
+}
+
+.code-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-toggle-2 {
+    @extend .btn-toggle;
+    font-size: small;
+    margin-left: 1rem;
+}

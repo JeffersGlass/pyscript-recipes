@@ -18,23 +18,39 @@
       </li>
 
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse" aria-expanded="true">
           APIs
         </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            {{ range where .Site.Pages "Params.flavor" "api"}}
-              <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
-            {{ end }}
-          </ul>
+        <div class="collapse show" id="api-collapse">
+          <button class="btn btn-toggle-2 align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pyscript-api-collapse" aria-expanded="true">
+            PyScript APIs
+          </button>
+          <div class="collapse show" id="pyscript-api-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              {{ range where .Site.Pages "Params.flavor" "pyscriptapi"}}
+                <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+
+          <button class="btn btn-toggle-2 align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pyscript-api-collapse" aria-expanded="true">
+            Pyodide APIs
+          </button>
+          <div class="collapse show" id="pyscript-api-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              {{ range where .Site.Pages "Params.flavor" "pyodideapi"}}
+                <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
       </li>
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-collapse" aria-expanded="true">
           Files
         </button>
-        <div class="collapse show" id="home-collapse">
+        <div class="collapse show" id="other-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             {{ range where .Site.Pages "Params.flavor" "file"}}
               <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>

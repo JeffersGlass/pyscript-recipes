@@ -1,0 +1,36 @@
+---
+---
+<p>Once you have <a href="installation">PyScript running on your page</a>, you can start writing Python code inside a <code>&lt;py-script&gt;</code> tag, which will then be executed when the page loads.</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <py-script>
+        print("Hello, world")
+        for i in range(10):
+            print(i)  
+    </py-script>
+    {{< /highlight >}}
+</div>
+<p>A complete example of an HTML page which loads PyScript and runs some Python code (including some additional recommended HTML bits) might look like:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello, world!</title>
+
+        <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
+        <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css">
+    </head>
+    <body>
+        <py-script>
+            print("Hello, world!")
+            for i in range(10):
+                print(i)
+        </py-script>
+    </body>
+    </html>
+    {{< /highlight >}}
+</div>
