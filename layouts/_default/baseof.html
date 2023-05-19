@@ -3,14 +3,15 @@
     {{- partial "head.html" . -}}
     <body>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row flex-nowrap">
                 <div class="sticky-top col-sm-auto">{{- partial "sidebar.html" . -}}</div>
                 <div class="col-sm">
                     {{- partial "header.html" . -}}
                     {{- block "main" . }}{{- end }}
-                    {{- partial "footer.html" . -}}
+                    
                 </div>
             </div>
         </div>
+        {{- partial "footer.html" . -}}
     </body>
 </html>

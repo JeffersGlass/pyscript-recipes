@@ -3,7 +3,6 @@
    * Copyright 2011-2023 The Bootstrap Authors
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
-@import url(syntax.css);
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
@@ -9275,7 +9274,9 @@ textarea.form-control-lg {
 
 .code-wrapper {
   margin-top: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  max-width: 100%; }
 
 .btn-toggle-2 {
   font-size: small;
