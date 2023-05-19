@@ -27,7 +27,7 @@
           </button>
           <div class="collapse show" id="pyscript-api-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              {{ range where .Site.RegularPages "Section" "pyscriptApi" }}
+              {{ range where .Site.RegularPages "Section" "pyscript-api" }}
                 <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
               {{ end }}
             </ul>
@@ -38,7 +38,7 @@
           </button>
           <div class="collapse show" id="pyodide-api-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              {{ range where .Site.RegularPages "Section" "pyodideApi" }}
+              {{ range where .Site.RegularPages "Section" "pyodide-api" }}
                 <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
               {{ end }}
             </ul>
