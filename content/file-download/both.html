@@ -58,7 +58,7 @@ Title: "Both"
 </div>
 <p>Now that we have a File to work with, and an internal URL that the browser can point to, we'll create a "hidden" link to actually download this file. The link is hidden in that we don't actually ever need to add it to the page - simply creating the link object and telling the browser to "click" it is enough:</p>
 <div class="code-wrapper" style="overflow-x: auto; ">
-    {{< highlight python "linenos=True,hl_lines=1 15-18">}}
+    {{< highlight python "linenos=True,hl_lines=1 15-19">}}
     from js import Uint8Array, File, URL, document
     import io
 
@@ -84,9 +84,8 @@ Title: "Both"
 <div class="code-wrapper" style="overflow-x: auto; ">
     {{< highlight python "linenos=True,hl_lines=3 22">}}
     from js import Uint8Array, File, URL, document
-    import io
+    import iobutt
     from pyodide.ffi.wrappers import add_event_listener
-
 
     def downloadFile(*args):
         data = "Hello world, this is some text."
