@@ -16,6 +16,18 @@
           </ul>
         </div>
       </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          JavaScript Integration
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            {{ range where .Site.RegularPages "Section" "js-integration"}}
+              <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </li>
 
       <!-- <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#api-collapse" aria-expanded="false">
