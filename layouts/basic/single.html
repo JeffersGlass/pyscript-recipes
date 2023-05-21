@@ -1,10 +1,13 @@
 {{ define "main" }}
-{{ $pyscript_is_default := or (eq .Params.default_tab "pyscript") (eq .Params.default_tab nil) }}
+{{ $pyscript_is_default := or (eq .Params.default_tab "pyscript") (not ( isset .Params "default_tab" )) }}
 {{ $pyodide_is_default := eq .Params.default_tab "pyodide"}}
+
 {{ $pyscript_defaut_bool := cond $pyscript_is_default "true" "false"}}
 {{ $pyodide_default_bool := cond $pyodide_is_default "true" "false"}}
+
 {{ $show_pyscript_default := cond $pyscript_is_default "show" ""}}
 {{ $show_pyodide_default := cond $pyodide_is_default "show" ""}}
+
 {{ $pyscript_active := cond $pyscript_is_default "active" ""}}
 {{ $pyodide_active := cond $pyodide_is_default "active" ""}}
 
@@ -25,7 +28,7 @@
             </li>
             <li class="nav-item" role="presentation">
                 {{ with .Resources.GetMatch "both.html"}}
-                    <button class="nav-link active {{ $pyodide_active }}" id="pyodide-tab" data-bs-toggle="tab" data-bs-target="#pyodide" type="button" role="tab" aria-controls="home" aria-selected="{{ $pyodide_default_bool }}">Pyodide</button>
+                    <button class="nav-link {{ $pyodide_active }}" id="pyodide-tab" data-bs-toggle="tab" data-bs-target="#pyodide" type="button" role="tab" aria-controls="home" aria-selected="{{ $pyodide_default_bool }}">Pyodide</button>
                     {{ else }}
                 {{ with .Resources.GetMatch "pyodide.html"}}
                 <button class="nav-link {{ $pyodide_active }}" id="pyodide-tab" data-bs-toggle="tab" data-bs-target="#pyodide" type="button" role="tab" aria-controls="home" aria-selected="{{ $pyodide_default_bool }}">Pyodide</button>
