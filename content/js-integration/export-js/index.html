@@ -1,0 +1,37 @@
+---
+Title: 'Export JS Objects from Python'
+weight: 3
+---
+<p>In the same way that the <code>'js module'</code> can be used to <a href="import-js.html">import JavaScript objects into Python</a>, the same 'module' can be assigned to to create JavaScript objects from Python.</p>
+<p>If we have some Python objects that we'd like to export as a JavaScript objects:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True">}}
+    my_string = "This sure is a string"
+    my_list = [1,2,3]
+
+    class SimpleClass:
+        def __init__(self, name):
+            self.name = name
+    
+    my_instance = SimpleClass("some name")
+    {{< /highlight >}}
+</div>
+<p>We can use the following Python syntax to create corresponding JavaScript objects:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True">}}
+    import js
+
+    js.a_string = my_string
+    js.a_list = [1,2,3]
+
+    class SimpleClass:
+        def __init__(self, name):
+            self.name = name
+    
+    my_instance = SimpleClass("some name")
+
+    js.some_instance = my_instance
+    js.some_class = SimpleClass
+    {{< /highlight >}}
+</div>
+<p>Notice that we can translate simple objects like strings, and increasingly more complex objects like lists, functions, class instances, and classes. Simple objects like <code>int</code>s, <code>str</code>s, and <code>bool</code>s get converted to their corresponding JavaScript types; anything more complex appears in JavaScript as a proxy for the corresponding Python object. For a complete description of how objects are translated and proxied, see <a href="https://pyodide.org/en/stable/usage/type-conversions.html">the Pyodide Documentation</a>.</p>
