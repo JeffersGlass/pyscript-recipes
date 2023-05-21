@@ -47,7 +47,7 @@
             <div class="card-text mb-2">{{ .Content }}</div>
             
             <div class="tab-content" id="tab-content">
-                <div class="tab-pane {{ $pyscript_active }} active" role="tabpanel" id="pyscript" area-labelledby="pyscript-tab" tabindex="0">
+                <div class="tab-pane {{ $pyscript_active }}" role="tabpanel" id="pyscript" area-labelledby="pyscript-tab" tabindex="0">
                 {{ with .Resources.GetMatch "both.html" }}
                     {{ .Content }}
                 {{ else }}

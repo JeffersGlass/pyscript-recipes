@@ -1,0 +1,11 @@
+---
+title: "PyScript"
+draft: false
+---
+<!-- In PyScript next, this has issue with Syncify-->
+<p>Once PyScript <a href="/basic/installation">has been loaded</a>, we can use JavaScript to directly create Python objects using <code>pyodide.globals.set(name, value)</code>:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <button onclick="pyscript.interpreter.globals.set('my_string', 'hello world!')">Click Me</button>
+    {{< /highlight >}}
+</div>
