@@ -29,6 +29,18 @@
 		],
 		"description": "A hugo highlight tag"
 	},
+	"hl-python": {
+		"scope": "html",
+		"prefix": "hl-py",
+		"body": [
+			"<div class=\"code-wrapper\" style=\"overflow-x: auto; \">",
+			"	{{< highlight python \"linenos=True\">}}",
+			"	$1",
+			"	{{< /highlight >}}",
+			"</div>",
+		],
+		"description": "A hugo highlight tag"
+	},
 
 	// Place your pyscript-recipes workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
