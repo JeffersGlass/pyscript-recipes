@@ -4,14 +4,12 @@ flavor: 'basic'
 weight: 4
 ---
 <p><i>The PyScript and Pyodide versions of this tutorial are identical</i>.</p>
+<h2>Purpose</h2>
 <p>Many users user PyScript or Pyodide to create new files, or modify existing or uploaded files. One way to persist these files after the webpage is closed is to allow the user to download them.</p>
+<h2>Recipe</h2>
 <p>First, we'll need a button, link, or other element for the user to interact with to start the download. There are some actions (like file downloads) that web browsers will only permit in response to user actions; thankfully, downloading a file is one of that. You wouldn't want any arbitrary website to start downloading a file without your permission, right?</p>
 <div class="code-wrapper" style="overflow-x: auto; ">
     {{< highlight html "linenos=True">}}
     <button id="download">Click to Download</button>
     {{< /highlight >}}
-</div>
-<p>Which looks like the following:</p>
-<div class="p-2 card mb-4">
-    <button id="download" class="w-25">Click to Download</button>
 </div>

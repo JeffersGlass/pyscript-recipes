@@ -1,6 +1,34 @@
 ---
 Title: "Both"
 ---
+<p>Then, include the following code to cause a text file to be created and donloaded when this button is clicked. The information in the <code>data</code> variable will be included in the fie; the filename of the file will be, in this example, <code>my_other_file_name.txt</code>,</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True,hl_lines=3 22">}}
+    from js import Uint8Array, File, URL, document
+    import iobutt
+    from pyodide.ffi.wrappers import add_event_listener
+
+    data = "Hello world, this is some text."
+
+    def downloadFile(*args):
+        encoded_data = data.encode('utf-8')
+        my_stream = io.BytesIO(encoded_data)
+
+        js_array = Uint8Array.new(len(encoded_data))
+        js_array.assign(my_stream.getbuffer())
+
+        file = File.new([js_array], "unused_file_name.txt", {type: "text/plain"})
+        url = URL.createObjectURL(file)
+
+        hidden_link = document.createElement("a")
+        hidden_link.setAttribute("download", "my_other_file_name.txt")
+        hidden_link.setAttribute("href", url)
+        hidden_link.click()
+    
+    add_event_listener(document.getElementById("download"), "click", downloadFile)
+    {{< /highlight >}}
+</div>
+<h2>Tutorial</h2>
 <p>Next, we'll start setting up a function that will be called to download our file. (We'll handle actually attaching this function to our file download button in a moment.)</p>
 <p>Wiring up this function as an event listener means it will be passed an <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event Object</a>, but for our current example, we won't actually need it. We'll add <code>*args</code> to our function paramters to capture and swallow this argument.</p>
 <div class="code-wrapper" style="overflow-x: auto; ">

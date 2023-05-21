@@ -1,7 +1,30 @@
 ---
 title: "Both"
 ---
-<p>Next, we'll set up a function to handle the file upload once it's triggered. (We'll handle actually attaching this function to our file upload element in a moment.)</p>
+<p>Then, include the following code to allow the user to upload a file, and to do something with it once its uploaded. (Replace the <code>print</code> statement with the work you want to do.)</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=true,hl_lines=9">}}
+    from js import document, window, Uint8Array
+    from pyodide.ffi.wrappers import add_event_listener
+    
+    async def upload_file_and_show(e):
+        file_list = e.target.files
+        first_item = file_list.item(0)
+    
+        my_bytes: bytes = await get_bytes_from_file(first_item)
+        print(my_bytes[:10]) # Do something with file contents
+    
+    async def get_bytes_from_file(file):
+        array_buf = await file.arrayBuffer()
+        return array_buf.to_bytes()
+    
+    add_event_listener(document.getElementById("file-upload"), "change", upload_file_and_show)
+
+    {{< /highlight >}}
+</div>
+
+<h2>Tutorial</h2>
+<p>Let's start our Python code from scratch, and see how we'd go about setting up a a function to handle the file upload once it's triggered. (We'll handle actually attaching this function to our file upload element in a moment.)</p>
 <div class="code-wrapper" style="overflow-x: auto; ">
     {{< highlight python "linenos=True">}}
     # import a couple of useful objects from the JavaScript global namespace
@@ -55,6 +78,7 @@ title: "Both"
         first_item = file_list.item(0)
     
         my_bytes: bytes = await get_bytes_from_file(first_item)
+        print(my_bytes[:10]) # Do something with file contents
     
     async def get_bytes_from_file(file):
         array_buf = await file.arrayBuffer()
