@@ -1,0 +1,19 @@
+---
+title: "PyScript"
+draft: true
+---
+<p>PyScript</p>
+<p><b>This is stymied by Synclink and the need for syncify </b></p>
+
+<p>Once PyScript <a href="/basic/installation">has been loaded</a>, we can extract objects from its global scope. If we have objects in the Python global scope:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True">}}
+    my_string = "Hello again"  
+    {{< /highlight >}}
+</div>
+<p>We can capture its value in JS using <code>pyscript.interpreter.globals.get(...)</code>:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <button onclick="console.log(pyscript.interpreter.globals.get('my_string').syncify())">Click Me</button>
+    {{< /highlight >}}
+</div>
