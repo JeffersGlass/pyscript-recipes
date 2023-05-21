@@ -9,6 +9,9 @@ weight: 3
     my_string = "This sure is a string"
     my_list = [1,2,3]
 
+    def square(x):
+        return x * x
+
     class SimpleClass:
         def __init__(self, name):
             self.name = name
@@ -23,6 +26,7 @@ weight: 3
 
     js.a_string = my_string
     js.a_list = [1,2,3]
+    js.square_func_from_python = square
 
     class SimpleClass:
         def __init__(self, name):
