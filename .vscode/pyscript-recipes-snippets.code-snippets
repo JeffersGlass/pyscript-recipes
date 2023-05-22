@@ -19,7 +19,7 @@
 	},
 	"hl-html": {
 		"scope": "html",
-		"prefix": "hl-html",
+		"prefix": "hlhtml",
 		"body": [
 			"<div class=\"code-wrapper\" style=\"overflow-x: auto; \">",
 			"	{{< highlight html \"linenos=True\">}}",
@@ -31,10 +31,22 @@
 	},
 	"hl-python": {
 		"scope": "html",
-		"prefix": "hl-py",
+		"prefix": "hlpy",
 		"body": [
 			"<div class=\"code-wrapper\" style=\"overflow-x: auto; \">",
 			"	{{< highlight python \"linenos=True\">}}",
+			"	$1",
+			"	{{< /highlight >}}",
+			"</div>",
+		],
+		"description": "A hugo highlight tag"
+	},
+	"hl-js": {
+		"scope": "html",
+		"prefix": "hljs",
+		"body": [
+			"<div class=\"code-wrapper\" style=\"overflow-x: auto; \">",
+			"	{{< highlight js \"linenos=True\">}}",
 			"	$1",
 			"	{{< /highlight >}}",
 			"</div>",
