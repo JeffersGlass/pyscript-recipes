@@ -5,10 +5,10 @@
     <span class="fs-5 fw-semibold">PyScript Recipes</span>
   </a>
   <div id="horizontal-mobile-container">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#basics-mobile-collapse" aria-expanded="false">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#basics-mobile-collapseg" aria-expanded="false">
         Basics
       </button>
-      <div class="collapse" id="basics-mobile-collapse">
+      <div class="collapse" id="basics-mobile-collapseg">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {{ range where .Site.Pages "Params.flavor" "basic"}}
             <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
@@ -16,10 +16,10 @@
         </ul>
       </div>
 
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#javascript-mobile-collapse" aria-expanded="false">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#javascript-mobile-collapseg" aria-expanded="false">
         JavaScript Integration
       </button>
-      <div class="collapse" id="javascript-mobile-collapse">
+      <div class="collapse" id="javascript-mobile-collapseg">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {{ range where .Site.RegularPages "Section" "js-integration"}}
             <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
@@ -27,10 +27,10 @@
         </ul>
       </div>
 
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-mobile-collapse" aria-expanded="false">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-mobile-collapseg" aria-expanded="false">
         External Resources
       </button>
-      <div class="collapse" id="other-mobile-collapse">
+      <div class="collapse" id="other-mobile-collapseg">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           <li class="mb-1">
             <a href="https://github.com/pyscript/pyscript" class="link-dark link-underline-opacity-25 rounded">
