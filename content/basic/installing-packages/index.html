@@ -1,0 +1,11 @@
+---
+Title: Installing Python Packages
+flavor: basic
+weight: 3
+---
+<p>In addition to <a href="https://pyodide.org/en/stable/usage/wasm-constraints.html#python-standard-library">most of the Standard Library</a>, many other Python pacakges can loaded and used in the Browser. There are three types of Packages that can be loaded:</p>
+<ul>
+    <li>Packages that have been <a href="https://pyodide.org/en/stable/usage/packages-in-pyodide.html">pre-built by the Pyodide team</a>, with their C/Rust/Fortran extensions pre-compiled to work in Web Assembly.</li>
+    <li>Pure Python packages that are available on <a href="https://pypi.org/">PyPI</a>; that is, packages which publish a wheel ending in <code>-none-any.whl</code>. (Some packages written only in Python do not publish Pure Python wheels; check the 'Download Files' section on PyPI to confirm.)</li>
+    <li>Pure Python wheels that you build yourself.</li>
+</ul>
