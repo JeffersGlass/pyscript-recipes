@@ -1,3 +1,36 @@
 ---
 ---
-<p>Pyodide</p>
+<p>To install a new Python package from PyPI in Pyodide, first install the <code>micropip</code> python package, then use <code>micropip.install(package_name)</code>. For example, to load the Pure Python package <code>pyyaml</code>, and use it in some Python code:</p>
+<div class="code-wrapper" style="overflow-x: auto;">
+{{< highlight js >}}
+async function main() {
+    let pyodide = await loadPyodide(); //load pyodide
+
+    await pyodide.loadPackage("micropip");
+    const micropip = pyodide.pyimport("micropip");
+    await micropip.install('pyyaml');
+
+    // Once installed, packages can be imported and used
+    pyodide.runPython(`
+        import yaml
+        document = """
+        a: 1
+        b:
+            c: 3
+            d: 4
+        """
+        y = yaml.safe_load(document)
+        print(yaml.dump())
+    `)
+    };
+    main();
+{{< /highlight >}}
+</div>
+<p>To load a package built by the Pyodide project, use <code>pyodide.loadPackage</code>:</p>
+<div class="code-wrapper" style="overflow-x: auto; "></div>
+{{< highlight js >}}
+    //...
+    await pyodide.loadPackage("astropy");
+    //...
+{{< /highlight >}}
+</div>

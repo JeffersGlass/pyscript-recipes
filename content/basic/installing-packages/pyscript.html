@@ -1,3 +1,11 @@
 ---
 ---
-<p>PyScript</p>
+<p>To install a new Python package in PyScript, include the name of the package or the URL of the self-built wheel in the <code>packages</code> list in code <code>&lt;py-config&gt;</code>:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <py-config>
+        packages = ['astropy', 'pyyaml', 'https://example.com/files/someWheel-py3-none-any.whl']
+        # packages can be from PyPI, Pyodide Packages, or self-built wheels
+    </py-config>
+    {{< /highlight >}}
+</div>
