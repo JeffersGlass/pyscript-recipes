@@ -2,6 +2,7 @@ baseURL = 'https://pyscript.recipes'
 languageCode = 'en-us'
 title = 'PyScript and Pyodide Recipes'
 relativeURLS = true
+googleAnalytics = 'G-Y28QP0NFSN'
 
 [markup]
   [markup.highlight]

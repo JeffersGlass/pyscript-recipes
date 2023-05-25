@@ -13,5 +13,6 @@
   "arn:aws:s3:::pyscript-recipes"
   {{ $sidebarjs := resources.Get "js/sidebars.js" }}
   <script src="{{$sidebarjs.RelPermalink}}" defer></script>
+  {{ template "_internal/google_analytics.html" . }}
 
 </footer>
