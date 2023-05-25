@@ -2,11 +2,11 @@
 
 This is the source for [pyscript.recipes](https://pyscript.recipes), a site highlight short, drop-in code snippets for PyScript and Pyodide.
 
-#Contributing
-
 ## What is a Recipe? 
 
 A recipe is short snippet of code intended to do one simple thing. It is different from an *example*</i>*, which might be a fully-realized page accomplishing some holistic task; and a *tutorial*, which gives an in-depth explanation of the full usage of a specific piece of functionality or API.
+
+# Contributing
 
 ## Building this Site
 
@@ -14,7 +14,7 @@ To build this site, you will need to install the [Hugo Static Site Generator](ht
 
 You will also need [npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-Once Hugo is installed, clone this repository and, from the root directory, run `npm install`.
+Once Hugo is installed, clone this repository and, from the root directory, run `npm install`. This installs the bootstrap CSS and associated JS.
 
 When npm finishes installing all its packages, you can run `hugo server` from the root directory to see a live preview of the site, or `hugo build` to build a static copy.
 
@@ -46,7 +46,7 @@ For instanance, to create two new recipes, one which has different content for P
 
 ### Index.html
 
-Each `index.html` file should contain some [front matter](https://gohugo.io/content-management/front-matter/) which defines the page's Title (as displayed), its template (usually 'basic'), and its order on the sidebar ('weight'):
+Each `index.html` file should contain some [front matter](https://gohugo.io/content-management/front-matter/) which defines the page's Title (as displayed), its template (usually 'basic'), and its order on the sidebar ('weight'). Feel free to change the weights of other posts as necessary.
 
 #### Index.html
 ```
