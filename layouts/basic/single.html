@@ -53,18 +53,22 @@
                 <div class="tab-pane {{ $pyscript_active }}" role="tabpanel" id="pyscript" area-labelledby="pyscript-tab" tabindex="0">
                 {{ with .Resources.GetMatch "both.html" }}
                     {{ .Content }}
+                    <div class="version-box">{{ partial "pyscript-version.html"}}<br>{{ partial "pyodide-version.html" }}</div>
                 {{ else }}
-                    {{ with .Resources.GetMatch "pyscript.html"}}
+                    {{ with .Resources.GetMatch "pyscript.html" }}
                         {{ .Content }}
+                        <div class="version-box">{{ partial "pyscript-version.html" }}</div>
                     {{ end }}
                 {{ end }}   
                 </div>
                 <div class="tab-pane {{ $pyodide_active }}" role="tabpabel" id="pyodide" area-labelledby="pyscript-tab" tabindex="1">
                     {{ with .Resources.GetMatch "both.html" }}
                         {{ .Content }}
+                        <div class="version-box">{{ partial "pyscript-version.html"}}<br>{{ partial "pyodide-version.html" }}</div>
                     {{ else }}
                         {{ with .Resources.GetMatch "pyodide.html"}}
                             {{ .Content  }}
+                            <div class="version-box">{{ partial "pyodide-version.html" }}</div>
                         {{ end }}
                     {{ end }}
                 </div>
