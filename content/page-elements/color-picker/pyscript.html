@@ -1,0 +1,36 @@
+---
+---
+<p>To listen for these events in PyScript, add an attribute called <code>py-[event]</code> to the <code>input</code> object, where <code>[event]</code> is the type of one of these events above.</p>
+<p>For example, the following code prints:</p>
+<ul>
+    <li>An acknowledgement that the user opened the color picker</li>
+    <li>The selected color whenver the color is changed</li>
+    <li>The 'final' selected color when the color picker is closed</li>
+</ul>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <input type="color" 
+        id="main-color" 
+        py-click="opened_picker()"
+        py-input="color_changed()" 
+        py-change="final_color()">
+    {{< /highlight >}}
+</div>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True">}}
+    import js
+        
+    def opened_picker():
+        print("You opened the color picker!")
+
+    def color_changed():
+        elem = js.document.getElementById("main-color")
+        value = elem.value
+        print(f"The color changed to: {value}")
+
+    def final_color():
+        elem = js.document.getElementById("main-color")
+        value = elem.value
+        print(f"The selected color is: {value}")
+    {{< /highlight >}}
+</div>

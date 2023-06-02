@@ -1,0 +1,18 @@
+---
+Title: 'Color Picker'
+type: 'basic'
+---
+<p>Modern browsers have the ability to add a simple color picker directly to your HTML, using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color"><code>&lt;input type="color"&gt;</code></a> If your browser supports one, it looks like this:</p>
+<p><input type="color" id="main-color" py-input="do_something_with_color()" py-change="do_something_else()"></p>
+<p>The html for this element looks like this:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <input type="color" id="main-color">
+    {{< /highlight >}}
+</div>
+<p>There are several events one can listen to react to the user changing color, including:</p>
+<ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"><code>click</code></a> - fires when the user first clicks on the element to open the color picker</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code></a> - fires whenever the user selects a new color within the color picker</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code></a> - fires when the user deselects/closes the color picker</li>
+</ul>

@@ -1,0 +1,37 @@
+---
+---
+<p>To listen for these events in Pyodide, once <a href="/basic/installation">Pyodide is loaded,</a>, use Pyodide's <a href="https://pyodide.org/en/stable/usage/api/python-api/ffi.html#pyodide.ffi.wrappers.add_event_listener"><code>add_event_listener</code></a> function to attach the appropraite event listeners to the <code>&lt;input&gt;</code> element.</p>
+<p>For example, the following code prints:</p>
+<ul>
+    <li>An acknowledgement that the user opened the color picker</li>
+    <li>The selected color whenver the color is changed</li>
+    <li>The 'final' selected color when the color picker is closed</li>
+</ul>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight html "linenos=True">}}
+    <input type="color" id="main-color" >
+    {{< /highlight >}}
+</div>
+<p>The following Python code should be run using <code>pyodide.runPython</code>:</p>
+<div class="code-wrapper" style="overflow-x: auto; ">
+    {{< highlight python "linenos=True">}}
+    import js
+    from pyodide.ffi.wrappers import add_event_listener
+
+    def opened_picker(event):
+        print("You opened the color picker!")
+
+    def color_changed(event):
+        value = event.target.value
+        print(f"The color changed to: {value}")
+
+    def final_color(event):
+        value = event.target.value
+        print(f"The selected color is: {value}")
+
+    elem = js.document.getElementById("main-color")
+    add_event_listener(elem, 'click', opened_picker)
+    add_event_listener(elem, 'input', color_changed)
+    add_event_listener(elem, 'change', final_color)
+    {{< /highlight >}}
+</div>
