@@ -1,106 +1,3 @@
-<!-- Old Mobile Sidebar -->
-<!-- <div class="d-block d-sm-none pt-3">
-  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-    <img class="bi me-2" width="48" height="48" src="/pylogo.svg">
-    <span class="fs-5 fw-semibold">PyScript Recipes</span>
-  </a>
-  <div id="horizontal-mobile-container">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#basics-mobile-collapse" aria-expanded="false">
-        Basics
-      </button>
-      <div class="collapse" id="basics-mobile-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          {{ range where .Site.Pages "Params.flavor" "basic"}}
-            <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </div>
-
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page-elements-mobile-collapse" aria-expanded="false">
-        Webpage Elements
-      </button>
-      <div class="collapse" id="page-elements-mobile-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          {{ range where .Site.RegularPages "Section" "page-elements"}}
-            <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </div>
-
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#javascript-mobile-collapse" aria-expanded="false">
-        JavaScript Integration
-      </button>
-      <div class="collapse" id="javascript-mobile-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          {{ range where .Site.RegularPages "Section" "js-integration"}}
-            <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </div>
-
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-mobile-collapse" aria-expanded="false">
-        External Resources
-      </button>
-      <div class="collapse" id="other-mobile-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li class="mb-1">
-            <a href="https://github.com/pyscript/pyscript" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-              <span class="ps-2">PyScript GitHub</span>
-            </a>
-          </li>
-          <li class="mb-1">
-            <a href="https://docs.pyscript.net/" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-              </svg>
-              <span class="ps-2">PyScript Docs</span>
-            </a>
-          </li>
-          <li class="mb-1">
-            <a href="https://discord.gg/Y5MFvW5hbs" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="pe-2bi bi-discord" viewBox="0 0 16 16">
-                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
-              </svg>
-              <span class="ps-2">PyScript Discord</span>
-            </a>
-          </li>
-          <li class="mb-4"></li>
-          <li class="mb-1">
-            <a href="https://github.com/pyodide/pyodide" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-              <span class="ps-2">Pyodide GitHub</span>                
-            </a>
-          </li>
-          <li class="mb-1">
-            <a href="https://pyodide.org/en/stable/" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-              </svg>
-              <span class="ps-2">Pyodide Docs</span>
-            </a>
-          </li>
-          <li class="mb-1">
-            <a href="https://app.gitter.im/#/room/#pyodide_community:gitter.im" class="link-dark link-underline-opacity-25 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="pe-2bi bi-chat-left-dots" viewBox="0 0 16 16">
-                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-              </svg>
-              <span class="ps-2">Pyodide Gitter</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <a href="/about.html" class="ms-4 link-dark rounded text-decoration-none">About</a>
-
-  </div>
-</div> -->
-
 <!-- Mobile Sidebar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary d-block d-md-none">
   <div class="container-fluid">
@@ -161,10 +58,10 @@
     </a>
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#basics-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#basics-collapse" aria-expanded="false">
           Basics
         </button>
-        <div class="collapse show" id="basics-collapse">
+        <div class="collapse" id="basics-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             {{ range where .Site.Pages "Params.flavor" "basic"}}
               <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
@@ -173,10 +70,10 @@
         </div>
       </li>
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page-element-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#page-element-collapse" aria-expanded="false">
           Page Elements
         </button>
-        <div class="collapse show" id="page-element-collapse">
+        <div class="collapse" id="page-element-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             {{ range where .Site.RegularPages "Section" "page-elements"}}
               <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
@@ -185,10 +82,10 @@
         </div>
       </li>
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#javascript-collapse" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#javascript-collapse" aria-expanded="false">
           JavaScript Integration
         </button>
-        <div class="collapse show" id="javascript-collapse">
+        <div class="collapse" id="javascript-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             {{ range where .Site.RegularPages "Section" "js-integration"}}
               <li><a href="{{.RelPermalink}}" class="link-dark rounded">{{ .Name }}</a></li>
