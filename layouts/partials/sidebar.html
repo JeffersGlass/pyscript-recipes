@@ -1,5 +1,5 @@
-<!-- Mobile Sidebar -->
-<div class="d-block d-sm-none pt-3">
+<!-- Old Mobile Sidebar -->
+<!-- <div class="d-block d-sm-none pt-3">
   <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
     <img class="bi me-2" width="48" height="48" src="/pylogo.svg">
     <span class="fs-5 fw-semibold">PyScript Recipes</span>
@@ -67,7 +67,7 @@
               <span class="ps-2">PyScript Discord</span>
             </a>
           </li>
-          <li class="mb-4"></li><!-- division here to Pyodide -->
+          <li class="mb-4"></li>
           <li class="mb-1">
             <a href="https://github.com/pyodide/pyodide" class="link-dark link-underline-opacity-25 rounded">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -99,10 +99,62 @@
       <a href="/about.html" class="ms-4 link-dark rounded text-decoration-none">About</a>
 
   </div>
-</div>
+</div> -->
+
+<!-- Mobile Sidebar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary d-block d-md-none">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand d-flex align-items-center link-dark text-decoration-none">
+      <img class="bi me-2" width="48" height="48" src="/pylogo.svg">
+      <span class="fs-5 fw-semibold">PyScript Recipes</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Basics
+          </a>
+          <ul class="dropdown-menu">
+            {{ range where .Site.Pages "Params.flavor" "basic"}}
+              <li><a class="dropdown-item" href="{{.RelPermalink}}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Page Elements
+          </a>
+          <ul class="dropdown-menu">
+            {{ range where .Site.RegularPages "Section" "page-elements"}}
+              <li><a class="dropdown-item" href="{{.RelPermalink}}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          JS Integration
+        </a>
+        <ul class="dropdown-menu">
+          {{ range where .Site.RegularPages "Section" "js-integration"}}
+            <li><a class="dropdown-item" href="{{.RelPermalink}}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/about.html">About</a>
+    </li>
+    </div>
+  </div>
+</nav>
 
 <!-- Large Sidebar -->
-<div class="flex-shrink-0 p-3 bg-white d-none d-sm-block sticky-top" style="width: 280px;">
+<div class="flex-shrink-0 p-3 bg-white d-none d-md-block sticky-top" style="width: 280px;">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <img class="bi me-2" width="48" height="48" src="/pylogo.svg">
       <span class="fs-5 fw-semibold">PyScript Recipes</span>
