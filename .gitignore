@@ -2,3 +2,7 @@
 /public
 /node_modules
 /resources/_gen
+
+# JavaScript assets
+
+*lunr
