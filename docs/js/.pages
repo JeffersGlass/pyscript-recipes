@@ -2,4 +2,6 @@ nav:
     - fundamentals.md
     - "Importing JS Objects in Python": import-js.md
     - "Constructing JS Objects": constructing-js-objects.
-    - ...
+    - import-js.md
+    - export-js.md
+    - import-py.md
