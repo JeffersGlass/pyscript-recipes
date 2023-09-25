@@ -3,3 +3,5 @@ nav:
     - running-code.md
     - repl.md
     - installing-packages.md
+    - file-upload.md
+    
