@@ -1,6 +1,7 @@
-site_name: My Docs
+site_name: pyscript.recipes
 theme:
   name: material
+  logo: assets/book-solid.svg
   features:
     - navigation.instant
     - navigation.tracking
