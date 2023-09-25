@@ -5,3 +5,4 @@ nav:
     - import-js.md
     - export-js.md
     - import-py.md
+    - export-py.md
