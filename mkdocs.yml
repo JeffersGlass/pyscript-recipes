@@ -5,6 +5,9 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+  icon:
+    admonition:
+      info: material/sim-alert
 
 
   palette: 
