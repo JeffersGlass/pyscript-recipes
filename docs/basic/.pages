@@ -1,0 +1,4 @@
+nav:
+    - installation.md
+    - running-code.md
+    - repl.md

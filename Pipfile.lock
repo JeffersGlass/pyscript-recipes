@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5032725f41528e0f96cc696c93f0b000514075d863616884f348bddb088ef16f"
+            "sha256": "e3dca742b1e080f1e2e291ec117484a4367e17ff8c79f2cae7ebee8a307d8a8a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.12.1"
+        },
+        "bracex": {
+            "hashes": [
+                "sha256:a27eaf1df42cf561fed58b7a8f3fdf129d1ea16a81e1fadd1d17989bc6384beb",
+                "sha256:efdc71eff95eaff5e0f8cfebe7d01adf2c8637c8c92edaf63ef348c241a82418"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==2.4"
         },
         "certifi": {
             "hashes": [
@@ -242,6 +250,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==1.5.3"
         },
+        "mkdocs-awesome-pages-plugin": {
+            "hashes": [
+                "sha256:9c795587695bd1ee85a8b7e43293005418df5a8b9ef296a3e628be427b693b4d",
+                "sha256:c3f7d366ecfe99b64524c49a84d8e13c576c19a918ea2e6f59bb486a259313af"
+            ],
+            "index": "pypi",
+            "version": "==2.9.2"
+        },
         "mkdocs-material": {
             "hashes": [
                 "sha256:1495273cfce13ab52bcfcc49fa6fac779ae75818dfe566ed149d9d3aea7d8439",
@@ -257,6 +273,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==1.2"
+        },
+        "natsort": {
+            "hashes": [
+                "sha256:45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581",
+                "sha256:4732914fb471f56b5cce04d7bae6f164a592c7712e1c85f9ef585e197299521c"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==8.4.0"
         },
         "packaging": {
             "hashes": [
@@ -526,6 +550,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==3.0.0"
+        },
+        "wcmatch": {
+            "hashes": [
+                "sha256:14554e409b142edeefab901dc68ad570b30a72a8ab9a79106c5d5e9a6d241bd5",
+                "sha256:86c17572d0f75cbf3bcb1a18f3bf2f9e72b39a9c08c9b4a74e991e1882a8efb3"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==8.5"
         }
     },
     "develop": {}

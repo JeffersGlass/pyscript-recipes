@@ -1,3 +1,5 @@
+# Running Code
+
 === "PyScript"
 
     <p>Once you have <a href="installation">PyScript running on your page</a>, you can start writing Python code inside a <code>&lt;py-script&gt;</code> tag, which will then be executed when the page loads.</p>
