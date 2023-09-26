@@ -2,4 +2,4 @@ nav:
     - "Home": index.md
     - "Basics": basic
     - "JavaScript Integration": js-integration
-    - "HTML Elements": page-elements    
+    - "HTML Elements": page-elements
