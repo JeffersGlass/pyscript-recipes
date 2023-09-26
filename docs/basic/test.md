@@ -1,0 +1,7 @@
+=== "foo"
+
+    hello
+
+=== "bar"
+
+    world

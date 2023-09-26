@@ -44,5 +44,5 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_CF_DISTRIBUTION_ID: ${{ secrets.AWS_CF_DISTRIBUTION_ID }}
           AWS_REGION: 'us-east-2'
-          SOURCE_DIR: 'public'
+          SOURCE_DIR: 'old/public'
 
