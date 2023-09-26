@@ -5,7 +5,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
+    - navigation.indexes
   icon:
     admonition:
       info: material/sim-alert

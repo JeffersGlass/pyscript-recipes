@@ -1,3 +1,5 @@
+# Exporting Objects from JS to Python
+
 <p>It may be useful for some applications to create new Python objects directly from JavaScript.</p>
 
 === "PyScript"
