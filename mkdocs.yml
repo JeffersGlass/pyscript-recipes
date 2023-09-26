@@ -2,6 +2,7 @@ site_name: pyscript.recipes
 theme:
   name: material
   logo: assets/book-solid.svg
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.tracking
