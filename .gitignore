@@ -7,3 +7,6 @@
 
 *lunr
 /site
+
+# conda
+/env
