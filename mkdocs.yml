@@ -47,6 +47,7 @@ markdown_extensions:
 plugins:
   - search
   - awesome-pages
+  - mkdocs-pyscript
 
 extra:
   social:
