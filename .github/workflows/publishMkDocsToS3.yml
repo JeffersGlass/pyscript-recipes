@@ -1,4 +1,4 @@
-name: ci 
+name: Publish to S3
 on:
   push:
     branches:
