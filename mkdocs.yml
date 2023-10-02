@@ -48,3 +48,5 @@ markdown_extensions:
 plugins:
   - search
   - awesome-pages
+  - mike:
+    canonical_version: latest
