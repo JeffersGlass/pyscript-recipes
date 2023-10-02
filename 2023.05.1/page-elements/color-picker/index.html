@@ -950,81 +950,83 @@
   <h1>Color picker</h1>
 
 <p>Modern browsers have the ability to add a simple color picker directly to your HTML, using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color"><code>&lt;input type="color"&gt;</code></a> If your browser supports one, it looks like this:</p>
-<p><input id="main-color" py-change="do_something_else()" py-input="do_something_with_color()" type="color"/></p>
+<p><input type="color" id="main-color" py-input="do_something_with_color()" py-change="do_something_else()"></p>
 <p>The html for this element looks like this:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"color"</span> <span class="na">id</span><span class="o">=</span><span class="s">"main-color"</span><span class="p">&gt;</span>
+
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-color&quot;</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p>There are several events one can listen to react to the user changing color, including:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"><code>click</code></a> - fires when the user first clicks on the element to open the color picker</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code></a> - fires whenever the user selects a new color within the color picker</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code></a> - fires when the user deselects/closes the color picker</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"><code>click</code></a> - fires when the user first clicks on the element to open the color picker</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code></a> - fires whenever the user selects a new color within the color picker</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code></a> - fires when the user deselects/closes the color picker</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript</label><label for="__tabbed_1_2">Pyodide</label></div>
+
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript</label><label for="__tabbed_1_2">Pyodide</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><p>To listen for these events in PyScript, add an attribute called <code>py-[event]</code> to the <code>input</code> object, where <code>[event]</code> is the type of one of these events above.</p>
 <p>For example, the following code prints:</p>
 <ul>
-<li>An acknowledgement that the user opened the color picker</li>
-<li>The selected color whenver the color is changed</li>
-<li>The 'final' selected color when the color picker is closed</li>
+    <li>An acknowledgement that the user opened the color picker</li>
+    <li>The selected color whenver the color is changed</li>
+    <li>The 'final' selected color when the color picker is closed</li>
 </ul></p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"color"</span> 
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="na">id</span><span class="o">=</span><span class="s">"main-color"</span> 
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="na">py-click</span><span class="o">=</span><span class="s">"opened_picker()"</span>
-</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="na">py-input</span><span class="o">=</span><span class="s">"color_changed()"</span> 
-</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="na">py-change</span><span class="o">=</span><span class="s">"final_color()"</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span> 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-color&quot;</span> 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="na">py-click</span><span class="o">=</span><span class="s">&quot;opened_picker()&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="na">py-input</span><span class="o">=</span><span class="s">&quot;color_changed()&quot;</span> 
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="na">py-change</span><span class="o">=</span><span class="s">&quot;final_color()&quot;</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>This is before the code block?</p><div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">js</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">def</span> <span class="nf">opened_picker</span><span class="p">():</span>
-</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"You opened the color picker!"</span><span class="p">)</span>
-</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">def</span> <span class="nf">color_changed</span><span class="p">():</span>
-</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"main-color"</span><span class="p">)</span>
-</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The color changed to: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">def</span> <span class="nf">final_color</span><span class="p">():</span>
-</span><span id="__span-2-12"><a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"main-color"</span><span class="p">)</span>
-</span><span id="__span-2-13"><a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-</span><span id="__span-2-14"><a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The selected color is: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">js</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">opened_picker</span><span class="p">():</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You opened the color picker!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">def</span> <span class="nf">color_changed</span><span class="p">():</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;main-color&quot;</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The color changed to: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">def</span> <span class="nf">final_color</span><span class="p">():</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;main-color&quot;</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The selected color is: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <p><p>To listen for these events in Pyodide, once <a href="/basic/installation">Pyodide is loaded,</a>, use Pyodide's <a href="https://pyodide.org/en/stable/usage/api/python-api/ffi.html#pyodide.ffi.wrappers.add_event_listener"><code>add_event_listener</code></a> function to attach the appropraite event listeners to the <code>&lt;input&gt;</code> element.</p>
 <p>For example, the following code prints:</p>
 <ul>
-<li>An acknowledgement that the user opened the color picker</li>
-<li>The selected color whenver the color is changed</li>
-<li>The 'final' selected color when the color picker is closed</li>
+    <li>An acknowledgement that the user opened the color picker</li>
+    <li>The selected color whenver the color is changed</li>
+    <li>The 'final' selected color when the color picker is closed</li>
 </ul>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"color"</span> <span class="na">id</span><span class="o">=</span><span class="s">"main-color"</span> <span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main-color&quot;</span> <span class="p">&gt;</span>
 </span></code></pre></div>
 <p>The following Python code should be run using <code>pyodide.runPython</code>:</p></p>
-<p>This is before the code block?</p><div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">js</span>
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">pyodide.ffi.wrappers</span> <span class="kn">import</span> <span class="n">add_event_listener</span>
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">def</span> <span class="nf">opened_picker</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"You opened the color picker!"</span><span class="p">)</span>
-</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">def</span> <span class="nf">color_changed</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span>
-</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The color changed to: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>
-</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="k">def</span> <span class="nf">final_color</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span>
-</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The selected color is: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-4-14"><a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>
-</span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"main-color"</span><span class="p">)</span>
-</span><span id="__span-4-16"><a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">,</span> <span class="n">opened_picker</span><span class="p">)</span>
-</span><span id="__span-4-17"><a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">'input'</span><span class="p">,</span> <span class="n">color_changed</span><span class="p">)</span>
-</span><span id="__span-4-18"><a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">'change'</span><span class="p">,</span> <span class="n">final_color</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">js</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">pyodide.ffi.wrappers</span> <span class="kn">import</span> <span class="n">add_event_listener</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span> <span class="nf">opened_picker</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You opened the color picker!&quot;</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">def</span> <span class="nf">color_changed</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The color changed to: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">def</span> <span class="nf">final_color</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The selected color is: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">elem</span> <span class="o">=</span> <span class="n">js</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;main-color&quot;</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">opened_picker</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">color_changed</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">add_event_listener</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="n">final_color</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
-</input></div>
+</div>
 
 
 

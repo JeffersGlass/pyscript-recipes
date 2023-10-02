@@ -960,21 +960,24 @@
   <h1>Importing JS Objects in Python</h1>
 
 <p>In PyScript and Pyodide, the pseudo-module <code>js</code> is a proxy for the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_object">JavaScript Global Scope</a>. That is to say, if we have an variable in the JavaScript global scope:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Create a JavaScript global variable called my_string</span>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hello, world"</span>
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Create a JavaScript global variable called my_string</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p>We can access it (and in this case, print the string it represents) using either any of the following Python syntax options:</p>
-<p>This is before the code block?</p><div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">js</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">js</span><span class="o">.</span><span class="n">my_string</span><span class="p">)</span>
+
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">js</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">js</span><span class="o">.</span><span class="n">my_string</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This is before the code block?</p><div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">my_string</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">my_string</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Using <code>from js import *</code> does <i>not</i> work; however, you can get a list of all objects in the JavaScript global scope using:</p>
-<p>This is before the code block?</p><div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">js</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">js</span><span class="p">))</span>
+
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">js</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">js</span><span class="p">))</span>
 </span></code></pre></div>
 
 
