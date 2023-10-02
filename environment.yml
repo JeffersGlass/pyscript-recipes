@@ -1,0 +1,9 @@
+name: pyscript-recipes
+channels:
+  - default
+dependencies:
+  - pip
+  - pip:
+    - mkdocs-material
+    - mkdocs-awesome-pages-plugin
+    - mike

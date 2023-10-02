@@ -11,7 +11,6 @@ theme:
     admonition:
       info: material/sim-alert
 
-
   palette: 
      # Palette toggle for light mode
     - scheme: default
@@ -50,3 +49,11 @@ plugins:
   - awesome-pages
   - mike:
     canonical_version: latest
+  - mkdocs-pyscript
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.org/jeffersglass
+
+copyright: Copyright &copy; 2023 Jeff Glass - <a href="/about#license">License Details</a>
