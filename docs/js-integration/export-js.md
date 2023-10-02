@@ -32,5 +32,9 @@
 
     <p>Notice that we can translate simple objects like strings, and increasingly more complex objects like lists, functions, class instances, and classes. Simple objects like <code>int</code>s, <code>str</code>s, and <code>bool</code>s get converted to their corresponding JavaScript types; anything more complex appears in JavaScript as a proxy for the corresponding Python object. For a complete description of how objects are translated and proxied, see <a href="https://pyodide.org/en/stable/usage/type-conversions.html">the Pyodide Documentation</a>.</p>
 
+<<<<<<< Updated upstream
 === "Pyodide"
     
+=======
+=== "Pyodide"
+>>>>>>> Stashed changes
