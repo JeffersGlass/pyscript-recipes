@@ -4,8 +4,8 @@
     Inside your HTML document, include the following two tags. Ideally, these should go inside your `<head>` tag, but it is also fine to put them inside the  `<body>` tag:
 
     ```html
-    <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css">
+    <script defer src="https://pyscript.net/releases/2023.05.1/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.05.1/pyscript.css">
     ```
 === "Pyodide"
 
