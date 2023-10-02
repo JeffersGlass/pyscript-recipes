@@ -47,13 +47,16 @@ markdown_extensions:
 plugins:
   - search
   - awesome-pages
-  - mike:
-    canonical_version: latest
   - mkdocs-pyscript
+  - mike:
+      canonical_version: "latest"
+  
 
 extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.org/jeffersglass
+  version:
+    provider: mike
 
 copyright: Copyright &copy; 2023 Jeff Glass - <a href="/about#license">License Details</a>

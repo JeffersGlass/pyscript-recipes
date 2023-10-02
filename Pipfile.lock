@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "eadb8d0cceaf1224182a480e0f6e6d43d48b1851ee6d0348716f2ab8c2a2beed"
+            "sha256": "7fb22ae195f5c2ae71cc8e7f3c387e38b9668951fa4c9978cd55bd29de0c3e99"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.12.1"
+        },
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da",
+                "sha256:bd2520ca0d9d7d12694a53d44ac482d181b4ec1888909b035a3dbf40d0f57d4a"
+            ],
+            "markers": "python_full_version >= '3.6.0'",
+            "version": "==4.12.2"
         },
         "bracex": {
             "hashes": [
@@ -297,6 +305,10 @@
             "markers": "python_version >= '3.7'",
             "version": "==1.2"
         },
+        "mkdocs-pyscript": {
+            "editable": true,
+            "path": "./../mkdocs-pyscript"
+        },
         "natsort": {
             "hashes": [
                 "sha256:45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581",
@@ -532,6 +544,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.16.0"
+        },
+        "soupsieve": {
+            "hashes": [
+                "sha256:5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690",
+                "sha256:eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==2.5"
         },
         "urllib3": {
             "hashes": [

@@ -7,6 +7,7 @@ name = "pypi"
 mkdocs-material = "*"
 mkdocs-awesome-pages-plugin = "*"
 mike = "*"
+mkdocs-pyscript = {editable = true, path = "./../mkdocs-pyscript"}
 
 [dev-packages]
 
