@@ -2,7 +2,9 @@ name: ci
 on:
   push:
     branches:
-      - gh-pages 
+      - gh-pages
+  workflow_dispatch:
+  
 permissions:
   contents: write
 jobs:
@@ -10,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: git checkout gh-pages
+        with:
+          ref: gh-pages
       - name: S3 Sync
         uses: JeffersGlass/s3-sync-action@master
         with: 
@@ -21,4 +24,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_CF_DISTRIBUTION_ID: ${{ secrets.AWS_CF_DISTRIBUTION_ID }}
           AWS_REGION: 'us-east-2'
-          SOURCE_DIR: '/'
+          SOURCE_DIR: './'
