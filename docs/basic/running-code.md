@@ -20,8 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hello, world!</title>
 
-        <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
-        <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css">
+        <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
     </head>
     <body>
         <py-script>
