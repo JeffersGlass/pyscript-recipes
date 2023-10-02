@@ -22,7 +22,8 @@
     print(window.my_string)
     ```
 
-    Note that these examples work regardless of whether the code is run in the main thread or a worker thread - `pyscript.window` always references the global scope of the *main thread*. If you need access to the global scope of a worker thread, use `import js`, which is a proxy for the global scope of the thread the code is running in.
+    !!! tip
+        These examples work regardless of whether the code is run in the main thread or a worker thread - `pyscript.window` always references the global scope of the *main thread*. If you need access to the global scope of a worker thread, use `import js`, which is a proxy for the global scope of the thread the code is running in.
 
 === "Pyodide"
 
