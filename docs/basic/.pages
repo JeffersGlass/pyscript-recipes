@@ -1,8 +1,6 @@
 nav:
     - installation.md
     - running-code.md
-    - repl.md
     - installing-packages.md
     - file-upload.md
     - file-download.md
-    - when-finished.md

@@ -38,10 +38,10 @@
                 d: 4
             """
             y = yaml.safe_load(document)
-            print(yaml.dump())
+            print(yaml.dump(y))
         `)
         };
-        main();
+    main();
     ```
     <p>To load a package built by the Pyodide project, use <code>pyodide.loadPackage</code>:</p>
     ```js

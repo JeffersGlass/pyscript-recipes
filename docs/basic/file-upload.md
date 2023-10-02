@@ -1,7 +1,11 @@
 # Uploading Files
 
-<div class="comment-box">This page is about setting up an interface for <i>the users of your page</i> to upload files. To setup files to be loaded on page load, use <a href="https://docs.pyscript.net/latest/reference/elements/py-config.html#a-name-fetch-fetch-a"><code>&lt;py-config&gt; [[fetch]]...</code></a></div>
-<p><i>The PyScript and Pyodide versions of this tutorial are identical</i>.</p>
+!!! warning "This page is about allowing end users to upload files"
+    This page is about setting up an interface for <i>the users of your page</i> to upload files. To setup files to be loaded on page load in PyScript, use <a href="https://docs.pyscript.net/latest/reference/elements/py-config.html#a-name-fetch-fetch-a"><code>&lt;py-config&gt; [[fetch]]...</code></a>
+!!! abstract ""
+    <i>The PyScript and Pyodide versions of this tutorial are identical</i>
+
+
 <h2>Purpose</h2>
 <p>As front-end frameworks, it is often useful for users of PyScript or Pyodide to allow users to upload their own individual files to the web page for processing. These might be CSV or parquet files of data, images for processing, text files etc.</p>
 <h2>Recipe</h2>

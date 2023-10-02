@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7fb22ae195f5c2ae71cc8e7f3c387e38b9668951fa4c9978cd55bd29de0c3e99"
+            "sha256": "eadb8d0cceaf1224182a480e0f6e6d43d48b1851ee6d0348716f2ab8c2a2beed"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -305,10 +305,6 @@
             "markers": "python_version >= '3.7'",
             "version": "==1.2"
         },
-        "mkdocs-pyscript": {
-            "editable": true,
-            "path": "./../mkdocs-pyscript"
-        },
         "natsort": {
             "hashes": [
                 "sha256:45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581",
@@ -555,11 +551,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594",
-                "sha256:ef16afa8ba34a1f989db38e1dbbe0c302e4289a47856990d0682e374563ce35e"
+                "sha256:7a7c7003b000adf9e7ca2a377c9688bbc54ed41b985789ed576570342a375cd2",
+                "sha256:b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.0.5"
+            "version": "==2.0.6"
         },
         "verspec": {
             "hashes": [
