@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: git checkout gh-pages
+        with:
+          ref: gh-pages
       - name: S3 Sync
         uses: JeffersGlass/s3-sync-action@master
         with: 
