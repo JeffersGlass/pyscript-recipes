@@ -2,7 +2,9 @@ name: ci
 on:
   push:
     branches:
-      - gh-pages 
+      - gh-pages
+  workflow_dispatch:
+  
 permissions:
   contents: write
 jobs:
@@ -10,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: git checkout gh-pages
       - name: S3 Sync
         uses: JeffersGlass/s3-sync-action@master
         with: 
