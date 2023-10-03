@@ -58,5 +58,8 @@ extra:
       link: https://github.org/jeffersglass
   version:
     provider: mike
+  analytics:
+    provider: google
+    property: G-Y28QP0NFSN
 
 copyright: Copyright &copy; 2023 Jeff Glass - <a href="/about#license">License Details</a>
