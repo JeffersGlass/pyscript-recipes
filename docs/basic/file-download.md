@@ -2,6 +2,7 @@
 
 !!! abstract ""
     <i>The PyScript and Pyodide versions of this recipe are identical</i>
+    
 <h2>Purpose</h2>
 <p>Many users user PyScript or Pyodide to create new files, or modify existing or uploaded files. One way to persist these files after the webpage is closed is to allow the user to download them.</p>
 <h2>Recipe</h2>

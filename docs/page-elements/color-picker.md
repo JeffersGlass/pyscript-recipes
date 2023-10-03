@@ -1,3 +1,5 @@
+# Color Picker
+
 <p>Modern browsers have the ability to add a simple color picker directly to your HTML, using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color"><code>&lt;input type="color"&gt;</code></a> If your browser supports one, it looks like this:</p>
 <p><input type="color" id="main-color" py-input="do_something_with_color()" py-change="do_something_else()"></p>
 <p>The html for this element looks like this:</p>
@@ -26,26 +28,26 @@
     ```html
     <input type="color" 
         id="main-color" 
-        py-click="opened_picker()"
-        py-input="color_changed()" 
-        py-change="final_color()">
+        py-click="opened_picker"
+        py-input="color_changed" 
+        py-change="final_color">
     ```
 
     ```py
-    import js
-            
-    def opened_picker():
-        print("You opened the color picker!")
+    from pyscript import display, document
 
-    def color_changed():
-        elem = js.document.getElementById("main-color")
-        value = elem.value
-        print(f"The color changed to: {value}")
+    def opened_picker(*args):
+        display("You opened the color picker!")
 
-    def final_color():
-        elem = js.document.getElementById("main-color")
+    def color_changed(*args):
+        elem = document.getElementById("main-color")
         value = elem.value
-        print(f"The selected color is: {value}")
+        display(f"The color changed to: {value}")
+
+    def final_color(*args):
+        elem = document.getElementById("main-color")
+        value = elem.value
+        display(f"The selected color is: {value}")
     ```
 
 
