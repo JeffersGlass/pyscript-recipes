@@ -3,7 +3,7 @@
 !!! warning "This page is about allowing end users to upload files"
     This page is about setting up an interface for <i>the users of your page</i> to upload files. To setup files to be loaded on page load in PyScript, use <a href="https://docs.pyscript.net/latest/reference/elements/py-config.html#a-name-fetch-fetch-a"><code>&lt;py-config&gt; [[fetch]]...</code></a>
 !!! abstract ""
-    <i>The PyScript and Pyodide versions of this tutorial are identical</i>
+    <i>The PyScript and Pyodide versions of this recipe are identical</i>
 
 
 <h2>Purpose</h2>

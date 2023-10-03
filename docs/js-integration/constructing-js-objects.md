@@ -1,3 +1,6 @@
+!!! abstract ""
+    <i>The PyScript and Pyodide versions of this recipe are identical</i>
+
 <p>Python lacks the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new operator</code></a> that JavaScript uses to construct new objects. To work around this, proxies of JavaScript classes within Python gain a <code>new()</code> which calls their constructor.</p>
 <p>If you have a JavaScript class defined like so:</p>
 
