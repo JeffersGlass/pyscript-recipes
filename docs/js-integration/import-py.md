@@ -17,14 +17,14 @@ It may be useful for some applications to extract objects from Python via JavaSc
             window.pyInterpreter = wrap.interpreter
         })
     </script>
-    
+
     <script type="py">
         my_string = "Hello, world!"
     </script>
     ```
     
 
-    Once stored, we can access Python objects by name by using (in this case) `pyInterpreter.globals.get()`:
+    Once stored, we can access Python objects by name by using (in this case) `pyInterpreter.globals.get(name)`:
 
 
     ```html

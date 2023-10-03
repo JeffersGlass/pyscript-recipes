@@ -2,6 +2,7 @@ site_name: pyscript.recipes
 theme:
   name: material
   logo: assets/book-solid.svg
+  favicon: assets/pylogo.svg
   custom_dir: overrides
   features:
     - navigation.instant
