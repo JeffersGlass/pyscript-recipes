@@ -1,20 +1,38 @@
 # Importing Python Objects in JavaScript
 
-<p>It may be useful for some applications to extract objects from Python via JavaScript.</p>
+It may be useful for some applications to extract objects from Python via JavaScript by name. This is, in generally, a little messier than [exporting objects from Python directly](export-js.md), but for some use cases it may be necessary
 
 === "PyScript"
 
-    Once PyScript <a href="/basic/installation">has been loaded</a>, we can extract objects from its global scope. If we have objects in the Python global scope:
+    We can use an alternate way of loading PyScript to install a hook, which stores a reference to the interpreter for later use. In this case, we'll store a global reference to the interpreter by assigning to the `window` object.
 
-    ```py
-    my_string = "Hello again"  
+    !!! info
+
+        The following code *replaces* the [typical script tag](/basic/installation) that would be used to load PyScript.
+
+    ```js
+    <script type="module">
+        import { config, hooks } from "https://pyscript.net/snapshots/2023.09.1/core.js"
+        hooks.onInterpreterReady.add((wrap, element) => {
+            window.pyInterpreter = wrap.interpreter
+        })
+    </script>
+    
+    <script type="py">
+        my_string = "Hello, world!"
+    </script>
     ```
+    
 
-    We can retrieve a reference to this Python object by name using <code>pyscript.interpreter.globals.get(name)</code>:
+    Once stored, we can access Python objects by name by using (in this case) `pyInterpreter.globals.get()`:
+
 
     ```html
-    <button onclick="console.log(pyscript.interpreter.globals.get('my_string'))">Click Me</button>
+    <button onclick="console.log(pyInterpreter.globals.get('my_string'))">Click Me</button>
     ```
+
+    !!! warning
+        Retrieving values from the interpreter will only succeed once the interpreter has been initialized and its code has run. You may wish to [listen for the `py:all-done`]() event and only act when the interpreter is ready.
 
 === "Pyodide"
 
