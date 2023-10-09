@@ -7,7 +7,7 @@ It may be useful for some applications to extract objects from Python via JavaSc
     We can use an alternate way of loading PyScript to install a hook, which stores a reference to the interpreter for later use. In this case, we'll store a global reference to the interpreter by assigning to the `window` object.
     !!! info
 
-        The following code *replaces* the [typical script tag](../basic/installation.md) that would be used to load PyScript.
+        The following code can *replace* the [typical script tag](../basic/installation.md) that would be used to load PyScript. Or they can be used together, if their URLs match; the PyScript module will only be imported once regardless.
 
     ```js
     <script type="module">
