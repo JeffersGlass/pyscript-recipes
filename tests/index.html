@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PyScript Next</title>
+        <script>
+            addEventListener("py:ready", console.log);
+        </script>
+        <link rel="stylesheet" href="https://pyscript.net/unstable/core.css">
+        <script type="module" src="https://pyscript.net/unstable/core.js"></script>
+        <script src="mini-coi.js"></script>
+    </head>
+    <body>
+        <script type="py" worker>
+            from pyscript import display, window
+            from pyodide.ffi.wrappers import add_event_listener
+        
+            def callback(event):
+                display("This will run when all script tags are complete")
+                display(f"{event.type=}")
+        
+            add_event_listener(window, "py:all-done", callback)
+        </script>
+        <script type="py" async>
+            import asyncio
+            for i in range(5):
+                print(i)
+                await asyncio.sleep(1)
+        </script>
+    </body>
+</html>
