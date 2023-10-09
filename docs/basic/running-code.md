@@ -1,6 +1,6 @@
 # Running Code
 
-=== "PyScript"
+=== "PyScript (Pyodide)"
 
     <p>Once you have <a href="installation">PyScript running on your page</a>, you can start writing Python code inside a <code>&lt;script&gt;</code> tag with the attribute `type="py"`, which will then be executed when the page loads.</p>
     ```html
@@ -18,15 +18,42 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hello, world!</title>
-
         <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
     </head>
     <body>
         <script type="py">
+            print("Hello, world!")
+            for i in range(10):
+                print(i)
+        </script>
+    </body>
+    </html>
+    ```
+
+=== "PyScript (Micropython)"
+
+    <p>Once you have <a href="installation">PyScript running on your page</a>, you can start writing Python code inside a <code>&lt;script&gt;</code> tag with the attribute `type="mpy"`, which will then be executed when the page loads.</p>
+    ```html
+    <script type="mpy">
+        print("Hello, world")
+        for i in range(10):
+            print(i)  
+    </script>
+    ```
+    !!! info
+
+        Note that Python's `print` function outputs to the [browser's dev console](https://balsamiq.com/support/faqs/browserconsole/). To output content to the screen, use PyScript's [display function](https://docs.pyscript.net/2023.09.1.RC2/user-guide/#pyscriptdisplay)
+    <p>A complete example of an HTML page which loads PyScript and runs some Python code (including some additional recommended HTML bits) might look like:</p>
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Hello, world!</title>
+        <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
+    </head>
+    <body>
+        <script type="mpy">
             print("Hello, world!")
             for i in range(10):
                 print(i)

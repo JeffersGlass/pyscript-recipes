@@ -8,11 +8,7 @@
 
     !!! info
 
-<<<<<<< Updated upstream
-        The following code *replaces* the [typical script tag](../basic/installation.md) that would be used to load PyScript.
-=======
         The following code can *replace* the [typical script tag](../basic/installation.md) that would be used to load PyScript. Or they can be used together, if their URLs match; the PyScript module will only be imported once regardless.
->>>>>>> Stashed changes
 
     ```js
     <script type="module">
