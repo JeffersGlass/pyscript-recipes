@@ -8,7 +8,7 @@
 
     !!! info
 
-        The following code *replaces* the [typical script tag](/basic/installation) that would be used to load PyScript.
+        The following code *replaces* the [typical script tag](../basic/installation.md) that would be used to load PyScript.
 
     ```js
     <script type="module">
