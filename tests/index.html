@@ -12,21 +12,26 @@
         <script src="mini-coi.js"></script>
     </head>
     <body>
-        <script type="py" worker>
-            from pyscript import display, window
-            from pyodide.ffi.wrappers import add_event_listener
+        <label for="Upload a File"></label>
+        <input type="file" id="file-upload" mpy-change="upload_file_and_show">
         
-            def callback(event):
-                display("This will run when all script tags are complete")
-                display(f"{event.type=}")
-        
-            add_event_listener(window, "py:all-done", callback)
-        </script>
-        <script type="py" async>
-            import asyncio
-            for i in range(5):
-                print(i)
-                await asyncio.sleep(1)
+        <script type="mpy">
+            from js import document, window, Uint8Array
+
+            async def upload_file_and_show(e):
+                file_list = e.target.files
+                first_item = file_list.item(0)
+
+                my_bytes: bytes = await get_bytes_from_file(first_item)
+                print(my_bytes[:10]) # Do something with file contents
+
+            async def get_bytes_from_file(file):
+                array_buf = await file.arrayBuffer()
+                print(dir(array_buf))
+                print(type(array_buf))
+                return array_buf.to_bytes()
+
+            #add_event_listener(document.getElementById("file-upload"), "change", upload_file_and_show)
         </script>
     </body>
 </html>
