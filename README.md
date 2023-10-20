@@ -10,13 +10,11 @@ A recipe is short snippet of code intended to do one simple thing. It is differe
 
 ## Building this Site
 
-To build this site, you will need to install the [Hugo Static Site Generator](https://gohugo.io/installation/) on your system. (While hugo has some npm wrappers, the native installations seem to be more errorproof). 
+[Install `pipenv`](https://docs.pipenv.org/install/#installing-pipenv).
 
-You will also need [npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+Once installed, run `pipenv install` to install the relevant packages, and `pipenv shell` to enter an interactive virtual environment shell.
 
-Once Hugo is installed, clone this repository and, from the root directory, run `npm install`. This installs the bootstrap CSS and associated JS.
-
-When npm finishes installing all its packages, you can run `hugo server` from the root directory to see a live preview of the site, or `hugo build` to build a static copy.
+Once your shell is active, you can view the current status of the docs with `mkdocs serve`, or preview already released versions with `mike serve`.
 
 ## Submitting a PR
 
