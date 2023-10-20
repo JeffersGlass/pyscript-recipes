@@ -12,28 +12,14 @@
         <script src="mini-coi.js"></script>
     </head>
     <body>
-        <button id="download" mpy-click="downloadFile">Click to Download</button>
+        <script>
+            // Create a JavaScript global variable called my_string
+            var my_string = "Hello, world"
+        </script>
         
         <script type="mpy">
-            from js import Uint8Array, File, URL, document
-            import io
-
-            data = "Hello world, this is some text."
-
-            def downloadFile(*args):
-                encoded_data = data.encode('utf-8')
-                my_stream = io.BytesIO(encoded_data)
-
-                js_array = Uint8Array.new(len(encoded_data))
-                js_array.assign(my_stream.getbuffer())
-
-                file = File.new([js_array], "unused_file_name.txt", {type: "text/plain"})
-                url = URL.createObjectURL(file)
-
-                hidden_link = document.createElement("a")
-                hidden_link.setAttribute("download", "my_other_file_name.txt")
-                hidden_link.setAttribute("href", url)
-                hidden_link.click()
+            import pyscript
+            print(pyscript.window.my_string)
         </script>
     </body>
 </html>
