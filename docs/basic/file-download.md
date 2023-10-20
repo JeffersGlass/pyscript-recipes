@@ -1,7 +1,7 @@
 # Downloading Files
 
 !!! abstract ""
-    <i>The PyScript and Pyodide versions of this recipe are identical</i>
+    <i>The PyScript and Pyodide versions of this recipe are identical. This recipe does not currently work with Micropython, due to limitations in passing objects between JavaScript and Python.</i>
     
 <h2>Purpose</h2>
 <p>Many users user PyScript or Pyodide to create new files, or modify existing or uploaded files. One way to persist these files after the webpage is closed is to allow the user to download them.</p>
@@ -14,7 +14,7 @@
 
 ```py
 from js import Uint8Array, File, URL, document
-import iobutt
+import io
 from pyodide.ffi.wrappers import add_event_listener
 
 data = "Hello world, this is some text."

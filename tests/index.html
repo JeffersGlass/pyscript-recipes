@@ -12,26 +12,28 @@
         <script src="mini-coi.js"></script>
     </head>
     <body>
-        <label for="Upload a File"></label>
-        <input type="file" id="file-upload" mpy-change="upload_file_and_show">
+        <button id="download" mpy-click="downloadFile">Click to Download</button>
         
         <script type="mpy">
-            from js import document, window, Uint8Array
+            from js import Uint8Array, File, URL, document
+            import io
 
-            async def upload_file_and_show(e):
-                file_list = e.target.files
-                first_item = file_list.item(0)
+            data = "Hello world, this is some text."
 
-                my_bytes: bytes = await get_bytes_from_file(first_item)
-                print(my_bytes[:10]) # Do something with file contents
+            def downloadFile(*args):
+                encoded_data = data.encode('utf-8')
+                my_stream = io.BytesIO(encoded_data)
 
-            async def get_bytes_from_file(file):
-                array_buf = await file.arrayBuffer()
-                print(dir(array_buf))
-                print(type(array_buf))
-                return array_buf.to_bytes()
+                js_array = Uint8Array.new(len(encoded_data))
+                js_array.assign(my_stream.getbuffer())
 
-            #add_event_listener(document.getElementById("file-upload"), "change", upload_file_and_show)
+                file = File.new([js_array], "unused_file_name.txt", {type: "text/plain"})
+                url = URL.createObjectURL(file)
+
+                hidden_link = document.createElement("a")
+                hidden_link.setAttribute("download", "my_other_file_name.txt")
+                hidden_link.setAttribute("href", url)
+                hidden_link.click()
         </script>
     </body>
 </html>
