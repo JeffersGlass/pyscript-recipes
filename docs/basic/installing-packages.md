@@ -7,7 +7,7 @@
     <li>Pure Python wheels that you build yourself.</li>
 </ul>
 
-=== "PyScript"
+=== "PyScript (Pyodide)"
 
     <p>To install a new Python package in PyScript, include the name of the package or the URL of the self-built wheel in the `packages` list in code `<py-config>`</p>
     ```html
@@ -16,6 +16,11 @@
         # packages can be from PyPI, Pyodide Packages, or self-built wheels
     </py-config>
     ```
+
+=== "PyScript (Micropython)"
+
+    !!! info
+        It is not currently possible to install external modules for MicroPython. See the relevant issues on GitHub for [PolyScript](https://github.com/pyscript/polyscript/issues/62) and [MicroPython](https://github.com/pyscript/polyscript/pull/63).
 
 === "Pyodide"
 

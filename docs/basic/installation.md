@@ -6,6 +6,9 @@
     ```html
     <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
     ```
+
+    This tag is the same whether you intend to use the Pyodide (CPython) interpreter or Micropython.
+    
 === "Pyodide"
 
     There is no need to install anything on your computer to use Pyodide.
