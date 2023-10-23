@@ -50,6 +50,7 @@ plugins:
   - awesome-pages
   - mike:
       canonical_version: "latest"
+      alias_type: symlink
   - social
 
 extra:
