@@ -1,4 +1,5 @@
 site_name: pyscript.recipes
+site_url: https://pyscript.recipes
 theme:
   name: material
   logo: assets/book-solid.svg
