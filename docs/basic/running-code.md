@@ -19,7 +19,7 @@
     <html lang="en">
     <head>
         <title>Hello, world!</title>
-        <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     </head>
     <body>
         <script type="py">
@@ -50,7 +50,7 @@
     <html lang="en">
     <head>
         <title>Hello, world!</title>
-        <script type="module" src="https://pyscript.net/snapshots/2023.09.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     </head>
     <body>
         <script type="mpy">
