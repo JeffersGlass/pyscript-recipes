@@ -3,6 +3,8 @@
 <p>It may be useful for some applications to create new Python objects directly from JavaScript.</p>
 
 === "PyScript"
+    !!! abstract ""
+        <i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i>
 
     We can use an alternate way of loading PyScript to install a hook, which stores a reference to the interpreter for later use. In this case, we'll store a global reference to the interpreter by assigning to the `window` object.
 
