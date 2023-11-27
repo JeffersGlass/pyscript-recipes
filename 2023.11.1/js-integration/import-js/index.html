@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://pyscript.recipes/latest/js-integration/import-js/">
+      
       
         <link rel="prev" href="../fundamentals/">
       
@@ -16,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/pylogo.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -24,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
   
@@ -69,6 +71,32 @@
   
 
     
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Importing JS Objects in Python - pyscript.recipes" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/import-js.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://pyscript.recipes/latest/js-integration/import-js/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Importing JS Objects in Python - pyscript.recipes" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/import-js.png" >
+      
     
     
   </head>
@@ -920,7 +948,10 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript</label><label for="__tabbed_1_2">Pyodide</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>In PyScript, the object <code>window</code> in the <code>pyscript</code> namespace is a proxy for the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_object">JavaScript Global Scope</a> of the <em>main thread</em>. That is to say, if we have an variable in the JavaScript global scope of the main (window) thread:</p>
+<div class="admonition abstract">
+<p><i>The Pyodide and Micropython version of this recipe are identical, </i></p>
+</div>
+<p>In PyScript, the object <code>window</code> in the <code>pyscript</code> namespace is a proxy for the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_object">JavaScript Global Scope</a> of the <em>main thread</em> That is to say, if we have an variable in the JavaScript global scope of the main (window) thread:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Create a JavaScript global variable called my_string</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world&quot;</span>
@@ -1014,10 +1045,11 @@ or </p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
