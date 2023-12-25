@@ -8,7 +8,7 @@
         "https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm" = "Fireworks"
         
         [js_modules.worker]
-        "import mathjax from 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/+esm" = "Mathjax"
+        "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/+esm" = "Mathjax"
     </py-config>
     ```
 

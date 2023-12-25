@@ -24,8 +24,8 @@
 
             # Start fireworks on the page
             from pyscript import document
-            dest = document.getElementById("fw")
-            f = Fireworks.Fireworks.new(dest)
+            container = document.getElementById("fw")
+            f = Fireworks.Fireworks.new(container)
             f.start()
         </script>
     </body>
