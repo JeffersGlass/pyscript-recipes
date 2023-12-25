@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://pyscript.recipes/latest/js-integration/constructing-js-objects/">
+        <link rel="canonical" href="https://pyscript.recipes/latest/js-integration/js-modules/">
       
       
-        <link rel="prev" href="../export-py/">
+        <link rel="prev" href="../constructing-js-objects/">
       
       
-        <link rel="next" href="../js-modules/">
+        <link rel="next" href="../../page-elements/color-picker/">
       
       
       <link rel="icon" href="../../assets/pylogo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Constructing JS Objects - pyscript.recipes</title>
+        <title>Importing JS Modules - pyscript.recipes</title>
       
     
     
@@ -75,11 +75,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Constructing JS Objects - pyscript.recipes" >
+        <meta  property="og:title"  content="Importing JS Modules - pyscript.recipes" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pyscript.recipes/2023.12.1/assets/images/social/js-integration/constructing-js-objects.png" >
+        <meta  property="og:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/js-modules.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -87,15 +87,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pyscript.recipes/latest/js-integration/constructing-js-objects/" >
+        <meta  property="og:url"  content="https://pyscript.recipes/latest/js-integration/js-modules/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Constructing JS Objects - pyscript.recipes" >
+        <meta  name="twitter:title"  content="Importing JS Modules - pyscript.recipes" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pyscript.recipes/2023.12.1/assets/images/social/js-integration/constructing-js-objects.png" >
+        <meta  name="twitter:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/js-modules.png" >
       
     
     
@@ -155,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Constructing JS Objects
+              Importing JS Modules
             
           </span>
         </div>
@@ -639,6 +639,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../constructing-js-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constructing JS Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -652,32 +672,12 @@
         
   
   <span class="md-ellipsis">
-    Constructing JS Objects
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../js-modules/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Importing JS Modules
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -987,39 +987,51 @@
                   
 
 
-  <h1>Constructing JS Objects</h1>
+  <h1>Importing JS Modules</h1>
 
-<div class="admonition abstract">
-<p><i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript (Pyodide)</label><label for="__tabbed_1_2">PyScript (Micropython)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>PyScript can automatically load <a href="https://nodejs.org/api/esm.html">JavaScript (ECMAScript) modules</a> and make them available for import in Python, using the <code>js_modules</code> table in <code>&lt;py-config&gt;</code>. The table has two subtables, <code>main</code> and <code>worker</code>, each of which is a list of <code>URL: python_name</code> pairs:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    [js_modules.main]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm&quot; = &quot;Fireworks&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    [js_modules.worker]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &quot;import mathjax from &#39;https://cdn.jsdelivr.net/npm/mathjax@3.2.2/+esm&quot; = &quot;Mathjax&quot;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">&lt;/</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The location specifier (<code>main</code> or <code>worker</code>) specifies where the <em>ESM module itself</em> is loaded. Modules loaded on the main thread are available to Python running on both the main thread and in workers. Most modules should likely be loaded to the main thread if their authors assume they'll have access to the DOM.</p>
+<p>Once included, modules can be imported within Python as a submobule of the <code>polyscript.js_modules</code>, <a href="../constructing-js-objects/">constructed</a> and <a href="../fundamentals/">interacted with</a> like any other JavaScript object.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <code>polyscript.js_modules</code> package will change to <code>pyscript.js_modules</code> in a future release.</p>
 </div>
-<p>Python lacks the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new operator</code></a> that JavaScript uses to construct new objects. To work around this, proxies of JavaScript classes within Python gain a <code>new()</code> which calls their constructor.</p>
-<p>If you have a JavaScript class defined like so:</p>
-
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">var</span> <span class="n">Boat</span> <span class="o">=</span> <span class="k">class</span> <span class="nc">Boat</span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">constructor</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">power</span><span class="p">){</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">this</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">this</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">power</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">}</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>We can construct new instances of the class within Python like so:</p>
-
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">Boat</span>
+<p><strong>Example</strong></p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fw&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">sailboat</span> <span class="o">=</span> <span class="n">Boat</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;33ft&quot;</span><span class="p">,</span> <span class="s2">&quot;sailpower&quot;</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">tugboat</span> <span class="o">=</span> <span class="n">Boat</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;80ft&quot;</span><span class="p">,</span> <span class="s2">&quot;diesel&quot;</span><span class="p">)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sailboat</span><span class="o">.</span><span class="n">size</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">tugboat</span><span class="o">.</span><span class="n">power</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">&lt;</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    [js_modules.main]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm&quot; = &quot;Fireworks&quot;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;/</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;py&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Import</span><span class="w"> </span><span class="nx">ESM</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="nx">just</span><span class="w"> </span><span class="nx">like</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">Python</span><span class="w"> </span><span class="nx">module</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="kr">from</span><span class="w"> </span><span class="nx">polyscript</span><span class="p">.</span><span class="nx">js_modules</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="nx">Fireworks</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="nx">fireworks</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">page</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="kr">from</span><span class="w"> </span><span class="nx">pyscript</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="nb">document</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;fw&quot;</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fireworks</span><span class="p">.</span><span class="nx">Fireworks</span><span class="p">.</span><span class="ow">new</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>This also works for classes already defined in the JavaScript global scope. For example, to create a new JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array">Float64Array</a> (an array of 8-byte floats), you can use the following similar syntax:</p>
-
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">Float64Array</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">my_array</span> <span class="o">=</span> <span class="n">Float64Array</span><span class="o">.</span><span class="n">new</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_array</span><span class="o">.</span><span class="n">byteLength</span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>This feature is not yet available in Micropython, but will be integrated in an upcoming release.</p>
+</div>
+</div>
+</div>
 
 
   
