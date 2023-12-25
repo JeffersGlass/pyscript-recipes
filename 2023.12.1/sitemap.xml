@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pyscript.recipes/latest/js-integration/js-modules/</loc>
+         <lastmod>2023-12-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pyscript.recipes/latest/other-resources/null/</loc>
          <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>

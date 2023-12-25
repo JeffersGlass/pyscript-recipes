@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://pyscript.recipes/latest/js-integration/import-py/">
+        <link rel="canonical" href="https://pyscript.recipes/latest/js-integration/js-modules/">
       
       
-        <link rel="prev" href="../export-js/">
+        <link rel="prev" href="../constructing-js-objects/">
       
       
-        <link rel="next" href="../export-py/">
+        <link rel="next" href="../../page-elements/color-picker/">
       
       
       <link rel="icon" href="../../assets/pylogo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Importing Python Objects in JavaScript - pyscript.recipes</title>
+        <title>Importing JS Modules - pyscript.recipes</title>
       
     
     
@@ -75,11 +75,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Importing Python Objects in JavaScript - pyscript.recipes" >
+        <meta  property="og:title"  content="Importing JS Modules - pyscript.recipes" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/import-py.png" >
+        <meta  property="og:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/js-modules.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -87,15 +87,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pyscript.recipes/latest/js-integration/import-py/" >
+        <meta  property="og:url"  content="https://pyscript.recipes/latest/js-integration/js-modules/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Importing Python Objects in JavaScript - pyscript.recipes" >
+        <meta  name="twitter:title"  content="Importing JS Modules - pyscript.recipes" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/import-py.png" >
+        <meta  name="twitter:image"  content="https://pyscript.recipes/latest/assets/images/social/js-integration/js-modules.png" >
       
     
     
@@ -119,11 +119,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#importing-python-objects-in-javascript" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -160,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Importing Python Objects in JavaScript
+              Importing JS Modules
             
           </span>
         </div>
@@ -604,18 +599,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../import-py/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +610,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -674,9 +659,16 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../js-modules/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -685,6 +677,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -980,8 +973,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -996,52 +987,48 @@
                   
 
 
-<h1 id="importing-python-objects-in-javascript">Importing Python Objects in JavaScript</h1>
-<p>It may be useful for some applications to extract objects from Python via JavaScript by name. This is, in generally, a little messier than <a href="../export-js/">exporting objects from Python directly</a>, but for some use cases it may be necessary</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript</label><label for="__tabbed_1_2">Pyodide</label></div>
+  <h1>Importing JS Modules</h1>
+
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PyScript (Pyodide)</label><label for="__tabbed_1_2">PyScript (Micropython)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="admonition abstract">
-<p><i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i></p>
-</div>
-<p>We can use an alternate way of loading PyScript to install a hook, which stores a reference to the interpreter for later use. In this case, we'll store a global reference to the interpreter by assigning to the <code>window</code> object.</p>
+<p>PyScript can automatically load <a href="https://nodejs.org/api/esm.html">JavaScript (ECMAScript) modules</a> and make them available for import in Python, using the <code>js_modules</code> table in <code>&lt;py-config&gt;</code>. The table has two subtables, <code>main</code> and <code>worker</code>, each of which is a list of <code>URL: python_name</code> pairs:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    [js_modules.main]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm&quot; = &quot;Fireworks&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    [js_modules.worker]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &quot;import mathjax from &#39;https://cdn.jsdelivr.net/npm/mathjax@3.2.2/+esm&quot; = &quot;Mathjax&quot;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">&lt;/</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The location specifier (<code>main</code> or <code>worker</code>) specifies where the <em>ESM module itself</em> is loaded. Modules loaded on the main thread are available to Python running on both the main thread and in workers. Most modules should likely be loaded to the main thread if their authors assume they'll have access to the DOM.</p>
+<p>Once included, modules can be imported within Python as a submobule of the <code>polyscript.js_modules</code>, <a href="../constructing-js-objects/">constructed</a> and <a href="../fundamentals/">interacted with</a> like any other JavaScript object.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The following code can <em>replace</em> the <a href="../../basic/installation/">typical script tag</a> that would be used to load PyScript. Or they can be used together, if their URLs match; the PyScript module will only be imported once regardless.</p>
+<p>The <code>polyscript.js_modules</code> package will change to <code>pyscript.js_modules</code> in a future release.</p>
 </div>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="o">&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">hooks</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;https://pyscript.net/releases/2023.12.1/core.js&quot;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">hooks</span><span class="p">.</span><span class="nx">onInterpreterReady</span><span class="p">.</span><span class="nx">add</span><span class="p">((</span><span class="nx">wrap</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">pyInterpreter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wrap</span><span class="p">.</span><span class="nx">interpreter</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">})</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="o">&lt;</span><span class="err">/script&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;py&quot;</span><span class="o">&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="o">&lt;</span><span class="err">/script&gt;</span>
+<p><strong>Example</strong></p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fw&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">&lt;</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    [js_modules.main]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm&quot; = &quot;Fireworks&quot;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;/</span><span class="nt">py-config</span><span class="p">&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;py&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Import</span><span class="w"> </span><span class="nx">ESM</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="nx">just</span><span class="w"> </span><span class="nx">like</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">Python</span><span class="w"> </span><span class="nx">module</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="kr">from</span><span class="w"> </span><span class="nx">polyscript</span><span class="p">.</span><span class="nx">js_modules</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="nx">Fireworks</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="nx">fireworks</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">page</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="kr">from</span><span class="w"> </span><span class="nx">pyscript</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="nb">document</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;fw&quot;</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fireworks</span><span class="p">.</span><span class="nx">Fireworks</span><span class="p">.</span><span class="ow">new</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>Once stored, we can access Python objects by name by using (in this case) <code>pyInterpreter.globals.get(name)</code>:</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;console.log(pyInterpreter.globals.get(&#39;my_string&#39;))&quot;</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Retrieving values from the interpreter will only succeed once the interpreter has been initialized and its code has run. You may wish to <a href="">listen for the <code>py:all-done</code></a> event and only act when the interpreter is ready.</p>
-</div>
 </div>
 <div class="tabbed-block">
-<p>Once Pyodide <a href="/basic/installation">has been loaded</a>, we can extract objects from its global scope. If we have objects in the Python global scope, we can extract them in JavaScript using <code>pyodide.globals.get(...)</code>:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">pyodide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">loadPyodide</span><span class="p">();</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="c1">// Pyodide is now ready to use...</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">runPython</span><span class="p">(</span><span class="sb">`</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sb">        my_string = &quot;Hello again&quot;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sb">    `</span><span class="p">));</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">globals</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;my_string&#39;</span><span class="p">)</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="nx">logs</span><span class="w"> </span><span class="nx">hello</span><span class="w"> </span><span class="nx">again</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">};</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nx">main</span><span class="p">();</span><span class="w"> </span>
-</span></code></pre></div>
+<p>This feature is not yet available in Micropython, but will be integrated in an upcoming release.</p>
 </div>
 </div>
 </div>
