@@ -1,10 +1,8 @@
-<p>Add a <code>&lt;py-repl&gt;</code> tag anywhere on your page to create <a href="https://realpython.com/python-repl/">REPL</a>.</p>
+=== "PyScript (Pyodide)"
+
+<p>Add a <code>&lt;py-editor&gt;</code> tag anywhere on your page to create an editable, runnable code-editor on the page <a href="https://realpython.com/python-repl/">REPL</a>.</p>
 ```html
 <py-repl></py-repl>
 ```
-<p>Enter Python code within the tag to pre-populate the REPL with code when the page loads.</p>
-<p>Add the <code>auto-generate</code> attribute to this tag to automatically add a new REPL cell to the page underneath the current one when the current one executes.</p>
-<p>Add the <code>output</code> attribute to the this tag to specify the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">id</a> of a DOM element where calls to <a href="https://docs.pyscript.net/latest/reference/API/display.html">display()</a> send their output.</p>
-```html
-<py-repl auto-generate output="some-id" ></py-repl>
-```
+
+=== "PyScript (Micropython)"

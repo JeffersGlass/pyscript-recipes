@@ -12,14 +12,14 @@
     ```
     !!! info
 
-        Note that Python's `print` function outputs to the [browser's dev console](https://balsamiq.com/support/faqs/browserconsole/). To output content to the screen, use PyScript's [display function](https://docs.pyscript.net/2023.11.1/user-guide/#pyscriptdisplay)
+        Note that Python's `print` function outputs to the [browser's dev console](https://balsamiq.com/support/faqs/browserconsole/). To output content to the screen, use PyScript's [display function](https://docs.pyscript.net/2023.12.1/user-guide/#pyscriptdisplay)
     <p>A complete example of an HTML page which loads PyScript and runs some Python code (including some additional recommended HTML bits) might look like:</p>
     ```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <title>Hello, world!</title>
-        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
     </head>
     <body>
         <script type="py">
@@ -43,14 +43,14 @@
     ```
     !!! info
 
-        Note that Python's `print` function outputs to the [browser's dev console](https://balsamiq.com/support/faqs/browserconsole/). To output content to the screen, use PyScript's [display function](https://docs.pyscript.net/2023.11.1/user-guide/#pyscriptdisplay)
+        Note that Python's `print` function outputs to the [browser's dev console](https://balsamiq.com/support/faqs/browserconsole/). To output content to the screen, use PyScript's [display function](https://docs.pyscript.net/2023.12.1/user-guide/#pyscriptdisplay)
     <p>A complete example of an HTML page which loads PyScript and runs some Python code (including some additional recommended HTML bits) might look like:</p>
     ```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <title>Hello, world!</title>
-        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
     </head>
     <body>
         <script type="mpy">

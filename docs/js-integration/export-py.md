@@ -14,7 +14,7 @@
 
     ```js
     <script type="module">
-        import { config, hooks } from "https://pyscript.net/releases/2023.11.1/core.js"
+        import { config, hooks } from "https://pyscript.net/releases/2023.12.1/core.js"
         hooks.onInterpreterReady.add((wrap, element) => {
             window.pyInterpreter = wrap.interpreter
         })
