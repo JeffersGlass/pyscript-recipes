@@ -2,7 +2,7 @@ nav:
     - installation.md
     - running-code.md
     - installing-packages.md
-    - repl.md
+    - In-Browser Editor: repl.md
     - file-upload.md
     - file-download.md
     - when-finished.md
