@@ -1,6 +1,8 @@
 # Exporting Objects from Python to JS
 
 === "PyScript"
+    !!! abstract ""
+        <i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i>
     <p>In the same way that [`pyscript.window`](import-js.md) can be used to <a href="import-js.html">import JavaScript objects into Python</a>, the same object can be assigned to to create JavaScript objects from Python.</p>
     <p>If we have some Python objects that we'd like to export as a JavaScript objects:</p>
 

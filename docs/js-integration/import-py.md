@@ -3,6 +3,8 @@
 It may be useful for some applications to extract objects from Python via JavaScript by name. This is, in generally, a little messier than [exporting objects from Python directly](export-js.md), but for some use cases it may be necessary
 
 === "PyScript"
+    !!! abstract ""
+        <i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i>
 
     We can use an alternate way of loading PyScript to install a hook, which stores a reference to the interpreter for later use. In this case, we'll store a global reference to the interpreter by assigning to the `window` object.
     !!! info
@@ -11,7 +13,7 @@ It may be useful for some applications to extract objects from Python via JavaSc
 
     ```js
     <script type="module">
-        import { config, hooks } from "https://pyscript.net/snapshots/2023.09.1/core.js"
+        import { config, hooks } from "https://pyscript.net/releases/2023.11.1/core.js"
         hooks.onInterpreterReady.add((wrap, element) => {
             window.pyInterpreter = wrap.interpreter
         })

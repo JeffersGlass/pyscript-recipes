@@ -12,21 +12,14 @@
         <script src="mini-coi.js"></script>
     </head>
     <body>
-        <script type="py" worker>
-            from pyscript import display, window
-            from pyodide.ffi.wrappers import add_event_listener
-        
-            def callback(event):
-                display("This will run when all script tags are complete")
-                display(f"{event.type=}")
-        
-            add_event_listener(window, "py:all-done", callback)
+        <script>
+            // Create a JavaScript global variable called my_string
+            var my_string = "Hello, world"
         </script>
-        <script type="py" async>
-            import asyncio
-            for i in range(5):
-                print(i)
-                await asyncio.sleep(1)
+        
+        <script type="mpy">
+            import pyscript
+            print(pyscript.window.my_string)
         </script>
     </body>
 </html>

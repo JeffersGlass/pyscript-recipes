@@ -1,5 +1,8 @@
 === "PyScript"
-    In PyScript, the object `window` in the `pyscript` namespace is a proxy for the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_object">JavaScript Global Scope</a> of the *main thread*. That is to say, if we have an variable in the JavaScript global scope of the main (window) thread:
+    !!! abstract ""
+        <i>The PyScript (Pyodide) and PyScript(Micropython) version of this recipe are identical, </i>
+
+    In PyScript, the object `window` in the `pyscript` namespace is a proxy for the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Global_object">JavaScript Global Scope</a> of the *main thread* That is to say, if we have an variable in the JavaScript global scope of the main (window) thread:
 
     ```html
     <script>
