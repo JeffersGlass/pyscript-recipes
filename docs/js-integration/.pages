@@ -5,4 +5,5 @@ nav:
     - import-py.md
     - export-py.md
     - "Constructing JS Objects": constructing-js-objects.md
+    - "Importing JS Modules": js-modules.md
     

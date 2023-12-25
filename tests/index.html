@@ -7,19 +7,26 @@
         <script>
             addEventListener("py:ready", console.log);
         </script>
-        <link rel="stylesheet" href="https://pyscript.net/unstable/core.css">
-        <script type="module" src="https://pyscript.net/unstable/core.js"></script>
+        <link rel="stylesheet" href="https://pyscript.net/releases/2023.12.1/core.css">
+        <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
         <script src="mini-coi.js"></script>
     </head>
     <body>
-        <script>
-            // Create a JavaScript global variable called my_string
-            var my_string = "Hello, world"
-        </script>
-        
-        <script type="mpy">
-            import pyscript
-            print(pyscript.window.my_string)
+        <div id="fw"></div>
+        <py-config>
+            [js_modules.main]
+                "https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/+esm" = "Fireworks"
+        </py-config>
+        <script type="py">
+            # Import ESM module just like a Python module
+            from polyscript.js_modules import Fireworks
+            print(dir(Fireworks))
+
+            # Start fireworks on the page
+            from pyscript import document
+            dest = document.getElementById("fw")
+            f = Fireworks.Fireworks.new(dest)
+            f.start()
         </script>
     </body>
 </html>
