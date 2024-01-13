@@ -19,8 +19,21 @@
 
 === "PyScript (Micropython)"
 
-    !!! info
-        It is not currently possible to install external modules for MicroPython. See the relevant issues on GitHub for [PolyScript](https://github.com/pyscript/polyscript/issues/62) and [MicroPython](https://github.com/pyscript/polyscript/pull/63).
+    <p>To install a new Micropython package in PyScript, include the name of the package in the `packages` list in code `<mpy-config>`.</p>
+    ```html
+    <mpy-config>
+        packages = ['curses.ascii']
+    </mpy-config>
+    ```
+    <p>To list of strings in `packages` are passed invidiually to the Micropython's [`mip`](https://docs.micropython.org/en/latest/reference/packages.html) tool. This means that by default packages are looked up in the [`micropthon-lib`](https://github.com/micropython/micropython-lib) repository, but you can also install directly from a URL, or, using the shorthand demo'd below, from a GitHub repo:
+    ```html
+    <mpy-config>
+        packages = [
+            'http://example.com/x/y/foo.mpy', # Download from URL
+            'github:org/user/path/package.json' # Download from GH Repo
+            ]
+    </mpy-config>
+    ```
 
 === "Pyodide"
 
