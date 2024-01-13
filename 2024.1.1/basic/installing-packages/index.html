@@ -79,7 +79,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pyscript.recipes/2024.1.1/assets/images/social/basic/installing-packages.png" >
+        <meta  property="og:image"  content="https://pyscript.recipes/latest/assets/images/social/basic/installing-packages.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -95,7 +95,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pyscript.recipes/2024.1.1/assets/images/social/basic/installing-packages.png" >
+        <meta  name="twitter:image"  content="https://pyscript.recipes/latest/assets/images/social/basic/installing-packages.png" >
       
     
     
@@ -1015,49 +1015,39 @@
 </span></code></pre></div></p>
 </div>
 <div class="tabbed-block">
-<p><p>To install a new Micropython package in PyScript, include the name of the package in the <code>packages</code> list in code <code>&lt;mpy-config&gt;</code>.</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">mpy-config</span><span class="p">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    packages = [&#39;curses.ascii&#39;]
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">&lt;/</span><span class="nt">mpy-config</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p>To list of strings in <code>packages</code> are passed invidiually to the Micropython's <a href="https://docs.micropython.org/en/latest/reference/packages.html"><code>mip</code></a> tool. This means that by default packages are looked up in the <a href="https://github.com/micropython/micropython-lib"><code>micropthon-lib</code></a> repository, but you can also install directly from a URL, or, using the shorthand demo'd below, from a GitHub repo:
-<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">mpy-config</span><span class="p">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    packages = [
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        &#39;http://example.com/x/y/foo.mpy&#39;, # Download from URL
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &#39;github:org/user/path/package.json&#39; # Download from GH Repo
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        ]
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">&lt;/</span><span class="nt">mpy-config</span><span class="p">&gt;</span>
-</span></code></pre></div></p>
-<p>See the <a href="https://docs.micropython.org/en/latest/reference/packages.html"><code>mip</code> documentation</a> for more details.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It is not currently possible to install external modules for MicroPython. See the relevant issues on GitHub for <a href="https://github.com/pyscript/polyscript/issues/62">PolyScript</a> and <a href="https://github.com/pyscript/polyscript/pull/63">MicroPython</a>.</p>
+</div>
 </div>
 <div class="tabbed-block">
 <p><p>To install a new Python package from PyPI in Pyodide, first install the <code>micropip</code> python package, then use <code>micropip.install(package_name)</code>. For example, to load the Pure Python package <code>pyyaml</code>, and use it in some Python code:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">pyodide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">loadPyodide</span><span class="p">();</span><span class="w"> </span><span class="c1">//load pyodide</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">loadPackage</span><span class="p">(</span><span class="s2">&quot;micropip&quot;</span><span class="p">);</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">micropip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">pyimport</span><span class="p">(</span><span class="s2">&quot;micropip&quot;</span><span class="p">);</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">micropip</span><span class="p">.</span><span class="nx">install</span><span class="p">(</span><span class="s1">&#39;pyyaml&#39;</span><span class="p">);</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="c1">// Once installed, packages can be imported and used</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">runPython</span><span class="p">(</span><span class="sb">`</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="sb">        import yaml</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="sb">        document = &quot;&quot;&quot;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="sb">        a: 1</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="sb">        b:</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="sb">            c: 3</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="sb">            d: 4</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="sb">        &quot;&quot;&quot;</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="sb">        y = yaml.safe_load(document)</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="sb">        print(yaml.dump(y))</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="sb">    `</span><span class="p">)</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="nx">main</span><span class="p">();</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">pyodide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">loadPyodide</span><span class="p">();</span><span class="w"> </span><span class="c1">//load pyodide</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">loadPackage</span><span class="p">(</span><span class="s2">&quot;micropip&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">micropip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">pyimport</span><span class="p">(</span><span class="s2">&quot;micropip&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">micropip</span><span class="p">.</span><span class="nx">install</span><span class="p">(</span><span class="s1">&#39;pyyaml&#39;</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">// Once installed, packages can be imported and used</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">runPython</span><span class="p">(</span><span class="sb">`</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sb">        import yaml</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sb">        document = &quot;&quot;&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sb">        a: 1</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sb">        b:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sb">            c: 3</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="sb">            d: 4</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="sb">        &quot;&quot;&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="sb">        y = yaml.safe_load(document)</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="sb">        print(yaml.dump(y))</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sb">    `</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="nx">main</span><span class="p">();</span>
 </span></code></pre></div>
 <p>To load a package built by the Pyodide project, use <code>pyodide.loadPackage</code>:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="c1">//...</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">loadPackage</span><span class="p">(</span><span class="s2">&quot;astropy&quot;</span><span class="p">);</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="c1">//...</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="c1">//...</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pyodide</span><span class="p">.</span><span class="nx">loadPackage</span><span class="p">(</span><span class="s2">&quot;astropy&quot;</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="c1">//...</span>
 </span></code></pre></div>
 </div></p>
 </div>
