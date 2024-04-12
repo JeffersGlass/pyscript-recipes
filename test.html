@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://pyscript.net/releases/2024.3.2/core.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.2/core.css">
+    
+</head>
+<body>
+    <py-config>
+        packages = ['colorama']
+    </py-config>
+    <script type="py" terminal>
+        from colorama import Fore, Back, Style
+        from colorama import Fore, Back, Style
+        print(Fore.RED + 'some red text')
+        print(Back.GREEN + 'and with a green background')
+        print(Style.DIM + 'and in dim text')
+        print(Style.RESET_ALL)
+        print('back to normal now')
+    </script>
+</body>
+</html>
