@@ -1,6 +1,7 @@
 nav:
     - "Home": index.md
     - "Basics": basic
+    - "Terminal": terminal
     - "JavaScript Integration": js-integration
     - "HTML Elements": page-elements
     - "External Resources": other-resources

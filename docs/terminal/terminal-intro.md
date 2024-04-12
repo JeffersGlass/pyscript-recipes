@@ -1,0 +1,3 @@
+# The Py-Terminal
+
+Users can add an interactive terminal to their page by adding `<script type="py" terminal></script>` (or `<script type="mpy" terminal>`). This initializes a terminal emulated powered by [xtermjs](https://xtermjs.org/) at that location on the page, which supports colors, formatting, and terminal control messages, allowing Python programs that expect to output to a rich console to display properly.
