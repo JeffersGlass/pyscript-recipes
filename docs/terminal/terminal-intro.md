@@ -10,7 +10,6 @@ The `terminal` attribute can be combined with the `worker` attribute to create a
 </py-config>
 <script type="py" terminal>
     from colorama import Fore, Back, Style
-    from colorama import Fore, Back, Style
     print(Fore.RED + 'some red text')
     print(Back.GREEN + 'and with a green background')
     print(Style.DIM + 'and in dim text')
