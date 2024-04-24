@@ -95,4 +95,24 @@
          <lastmod>2024-04-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://pyscript.recipes/latest/terminal/repl/</loc>
+         <lastmod>2024-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pyscript.recipes/latest/terminal/terminal-addons/</loc>
+         <lastmod>2024-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pyscript.recipes/latest/terminal/terminal-attribute/</loc>
+         <lastmod>2024-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pyscript.recipes/latest/terminal/terminal-intro/</loc>
+         <lastmod>2024-04-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
